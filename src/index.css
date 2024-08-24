@@ -1,6 +1,5 @@
 body {
   display: flex;
   justify-content: center;
-  height: 5000px;
-  background-image: linear-gradient(45deg, #00b09b 0%, #96c93d 100%);
+  background-color: rgb(123, 123, 152);
 }
