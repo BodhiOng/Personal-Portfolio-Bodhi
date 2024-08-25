@@ -12,7 +12,7 @@ export default function HeroSection() {
                     className="hero-avatar mb-4" 
                 />
                 <h1 className="hero-title">Bodhidharma Ong</h1>
-                <h2 className="hero-subtitle">Junior Backend Developer</h2>
+                <h2 className="hero-subtitle">Junior Fullstack Developer</h2>
                 <p className="hero-tagline">
                     Crafting innovative and scalable solutions for the web
                 </p>

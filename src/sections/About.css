@@ -1,0 +1,74 @@
+
+.about-me {
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.8); 
+    margin: 20px;
+}
+
+.about-me-title, .about-me-description {
+    font-family: 'Roboto Mono', Arial, sans-serif; 
+    color: white;
+    margin: 0;
+    padding: 0; 
+}
+.about-me-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-me-photo {
+    width: 150px;               
+    height: 150px;
+    border-radius: 50%;         
+    object-fit: cover;          
+}
+
+.about-me-description {
+    font-size: 1rem;
+    max-width: 90%;         
+    margin-bottom: 20px;
+}
+
+.skills-icons {
+    font-size: 2rem;            
+}
+
+.skill-icon {
+    margin: 0 10px;            
+}
+
+@media (max-width: 768px) {
+    .about-me-title {
+        font-size: 2rem;
+    }
+
+    .about-me-photo {
+        width: 120px;    
+        height: 120px;
+    }
+
+    .about-me-description {
+        font-size: 0.9rem; 
+    }
+
+    .skills-icons {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-me {
+        padding: 20px; 
+    }
+
+    .about-me-title {
+        font-size: 1.8rem;
+    }
+
+    .about-me-description {
+        font-size: 0.85rem;
+    }
+}
