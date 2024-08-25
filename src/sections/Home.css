@@ -4,31 +4,73 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
-    font-family: 'Roboto Mono', Arial;
-    color: white; 
+    font-family: 'Roboto Mono', Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding: 20px; 
 }
 
 .hero-avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%;
     object-fit: cover;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.5rem; 
     font-weight: bold;
 }
 
 .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem; 
     margin-top: 10px;
 }
 
 .hero-tagline {
     font-size: 1rem;
     margin-top: 15px;
-    max-width: 600px;
+    max-width: 100%; 
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-title {
+        font-size: 2rem; 
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem; 
+    }
+
+    .hero-tagline {
+        font-size: 0.875rem; 
+        max-width: 80%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .hero-title {
+        font-size: 1.75rem; 
+    }
+
+    .hero-subtitle {
+        font-size: 1rem; 
+    }
+
+    .hero-tagline {
+        font-size: 0.75rem; 
+        max-width: 70%; 
+    }
 }
