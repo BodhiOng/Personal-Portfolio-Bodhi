@@ -32,7 +32,7 @@ function SidebarNav() {
         <div>
             <nav className={`sidebar-nav ${isVisible ? 'show' : ''}`}>
                 <button onClick={() => scrollToSection('home-bookmark')}>Home</button>
-                <button onClick={() => scrollToSection('about-bookmark')}>About</button>
+                <button onClick={() => scrollToSection('about-bookmark')}>About Me</button>
                 <button>My skills</button>
                 <button>Portfolio</button>
                 <button>Get in <br />touch</button>

@@ -3,8 +3,8 @@
     text-align: center;
     padding: 40px;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.8); 
-    margin: 20px;
+    background: rgba(0, 0, 0, 0.5); 
+    margin: 50px;
 }
 
 .about-me-title, .about-me-description {
@@ -61,7 +61,8 @@
 
 @media (max-width: 480px) {
     .about-me {
-        padding: 20px; 
+        padding: 10px; 
+        margin: 0px;
     }
 
     .about-me-title {
