@@ -4,6 +4,7 @@ import About from './sections/About';
 import SidebarNav from './components/SidebarNav';
 import MySkills from './sections/MySkills';
 import Projects from './sections/Projects';
+import Education from './sections/Education';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
             </section>
             <section id='projects-bookmark'>
               <Projects/>
+            </section>
+            <section id='education-bookmark'>
+              <Education/>
             </section>
         </div>
     </div>
