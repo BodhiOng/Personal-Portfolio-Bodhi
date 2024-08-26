@@ -39,6 +39,11 @@
     margin-top: 10px;
 }
 
+.ending-msg {
+    font-size: 1.2rem;
+    width: 50% !important;
+}
+
 @media (max-width: 768px) {
     .ending-msg {
         font-size: 0.8rem;

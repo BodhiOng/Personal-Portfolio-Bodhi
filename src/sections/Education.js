@@ -42,7 +42,7 @@ function Education() {
 
 function EducationCard({ image, title, text1, text2 }) {
     return (
-        <div className='card mb-3' style={{ maxWidth: '540px' }}>
+        <div className='education-card mb-3' style={{ maxWidth: '540px' }}>
             <div className='row g-0'>
                 <div className='col-md-4 custom-card'>
                     <img src={image} className='img-fluid rounded-start' alt='School Logo' />
