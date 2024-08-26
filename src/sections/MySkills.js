@@ -21,7 +21,7 @@ function SkillsNav() {
         <div className="myskills-section">
             <h1 className="myskills-title mb-5">My Skills</h1>
             
-            <div className="left-align">
+            <div className='left-align'>
                 <h2 className="proglang mb-4">Programming Languages</h2>
                 <div className="d-flex justify-content-center align-items-center">
                     <div className="logos-container d-flex">
@@ -30,7 +30,7 @@ function SkillsNav() {
                             { src: typescriptlogo, alt: "TypeScript", label: "TypeScript" },
                             { src: pythonlogo, alt: "Python", label: "Python" },
                             { src: csharplogo, alt: "C#", label: "C#" },
-                            { src: javalogo, alt: "Java", label: "Java" }
+                            { src: javalogo, alt: "Java", label: "Java" },
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
@@ -50,8 +50,8 @@ function SkillsNav() {
                     <div className="logos-container d-flex">
                         {[
                             { src: expresslogo, alt: "Express.js", label: "Express.js" },
+                            { src: reactlogo, alt: "React.js", label: "React.js" },
                             { src: bootstraplogo, alt: "Bootstrap", label: "Bootstrap" },
-                            { src: reactlogo, alt: "React.js", label: "React.js" }
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
@@ -73,7 +73,7 @@ function SkillsNav() {
                             { src: postgresqllogo, alt: "PostgreSQL", label: "PostgreSQL" },
                             { src: mysqllogo, alt: "MySQL", label: "MySQL" },
                             { src: mssqllogo, alt: "MSSQL", label: "Microsoft SQL Server" },
-                            { src: mongodblogo, alt: "MongoDB", label: "MongoDB" }
+                            { src: mongodblogo, alt: "MongoDB", label: "MongoDB" },
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
@@ -107,6 +107,8 @@ function SkillsNav() {
                         ))}
                     </div>
                 </div>
+
+                <p className='ending-msg mt-5 mx-auto text-center'> I am always eager to learn and embrace new challenges! No learning curve intimidates me if it means I can accomplish the task at hand.</p>
             </div>
         </div>
     );
