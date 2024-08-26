@@ -65,48 +65,47 @@ function SkillsNav() {
                         ))}
                     </div>
                 </div>
-
-                <h2 className="databases mt-4 mb-4">Databases</h2>
-                <div className="d-flex justify-content-center align-items-center">
-                    <div className="logos-container d-flex">
-                        {[
-                            { src: postgresqllogo, alt: "PostgreSQL", label: "PostgreSQL" },
-                            { src: mysqllogo, alt: "MySQL", label: "MySQL" },
-                            { src: mssqllogo, alt: "MSSQL", label: "Microsoft SQL Server" },
-                            { src: mongodblogo, alt: "MongoDB", label: "MongoDB" },
-                        ].map((item, index) => (
-                            <div className="text-left logo-item" key={index}>
-                                <img 
-                                    src={item.src} 
-                                    alt={item.alt} 
-                                    className="img-fluid" 
-                                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
-                                />
-                                <h5 className='techlabel'>{item.label}</h5>
-                            </div>
-                        ))}
+                    <h2 className="databases mt-4 mb-4">Databases</h2>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div className="logos-container d-flex">
+                            {[
+                                { src: postgresqllogo, alt: "PostgreSQL", label: "PostgreSQL" },
+                                { src: mysqllogo, alt: "MySQL", label: "MySQL" },
+                                { src: mssqllogo, alt: "MSSQL", label: "Microsoft SQL Server" },
+                                { src: mongodblogo, alt: "MongoDB", label: "MongoDB" },
+                            ].map((item, index) => (
+                                <div className="text-left logo-item" key={index}>
+                                    <img 
+                                        src={item.src} 
+                                        alt={item.alt} 
+                                        className="img-fluid" 
+                                        style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                                    />
+                                    <h5 className='techlabel'>{item.label}</h5>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
-                <h2 className="tools mt-4 mb-4">Tools</h2>
-                <div className="d-flex justify-content-center align-items-center">
-                    <div className="logos-container d-flex">
-                        {[
-                            { src: gitlogo, alt: "Git", label: "Git" },
-                            { src: npmlogo, alt: "npm", label: "npm" },
-                        ].map((item, index) => (
-                            <div className="text-left logo-item" key={index}>
-                                <img 
-                                    src={item.src} 
-                                    alt={item.alt} 
-                                    className="img-fluid" 
-                                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
-                                />
-                                <h5 className='techlabel'>{item.label}</h5>
-                            </div>
-                        ))}
+                    <h2 className="tools mt-4 mb-4">Tools</h2>
+                    <div className="d-flex justify-content-center align-items-center">
+                        <div className="logos-container d-flex">
+                            {[
+                                { src: gitlogo, alt: "Git", label: "Git" },
+                                { src: npmlogo, alt: "npm", label: "npm" },
+                            ].map((item, index) => (
+                                <div className="text-left logo-item" key={index}>
+                                    <img 
+                                        src={item.src} 
+                                        alt={item.alt} 
+                                        className="img-fluid" 
+                                        style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                                    />
+                                    <h5 className='techlabel'>{item.label}</h5>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
 
                 <p className='ending-msg w-50 mt-5 mx-auto text-center'> I am always eager to learn and embrace new challenges! No learning curve intimidates me if it means I can accomplish the task at hand.</p>
             </div>

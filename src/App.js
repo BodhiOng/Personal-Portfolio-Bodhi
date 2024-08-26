@@ -3,6 +3,7 @@ import Home from './sections/Home';
 import About from './sections/About';
 import SidebarNav from './components/SidebarNav';
 import MySkills from './sections/MySkills';
+import Projects from './sections/Projects';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </section>
             <section id='myskills-bookmark'>
               <MySkills/>
+            </section>
+            <section id='projects-bookmark'>
+              <Projects/>
             </section>
         </div>
     </div>
