@@ -1,4 +1,7 @@
 .myskills-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
     font-family: 'Roboto Mono', Arial, sans-serif;
     color: white;
@@ -7,28 +10,30 @@
     padding: 20px; 
 }
 
-.skills-nav {
-    background-color: #333; 
-    padding: 20px; /* Spacing */
-    border-radius: 8px; /* Rounded corners */
-    color: white; /* Text color */
+.left-align {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.nav-list {
-    list-style-type: none; /* Remove bullets */
-    padding: 0; /* Remove default padding */
+.logos-container {
+    display: flex;
+    justify-content: space-around;
 }
 
-.nav-item {
-    cursor: pointer; /* Show pointer on hover */
-    padding: 10px; /* Spacing for each item */
-    transition: background-color 0.3s; /* Smooth background change */
+.logo-item {
+    margin-right: 20px; 
 }
 
-.nav-item:hover {
-    background-color: #555; /* Darker background on hover */
+.logo-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 
-.text-center h5 {
-    margin-top: 20px;
+.techlabel {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 10px;
 }

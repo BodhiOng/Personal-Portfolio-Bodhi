@@ -1,5 +1,9 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(to right, #405c68, #2e819c, #0d9ad7);
+  background-image: linear-gradient(to right, #2b4450, #1f5b73, #09689c);
+}
+
+html, body {
+  overflow-x: hidden;
 }
