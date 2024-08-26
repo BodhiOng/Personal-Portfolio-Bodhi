@@ -7,32 +7,54 @@
     font-family: 'Roboto Mono', Arial, sans-serif;
     color: white;
     text-align: center;
-    margin-top: 100px;
-    padding: 20px;
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.education h1 {
+    margin-bottom: 40px; 
 }
 
 .education .card {
     box-shadow: none;
     margin-top: 20px;
     margin-bottom: 20px;
+    background-color: #222; 
+    border: none; 
 }
 
 .row1, .row2 {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 20px; 
     justify-content: center; 
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    width: 100%; 
+    margin-bottom: 20px; 
 }
 
 .custom-card img {
-    width: max-content;
-    height: max-content; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
 }
 
 @media (max-width: 768px) {
     .row1, .row2 {
         flex-direction: column;
-        gap: 0px !important;
+        gap: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .row1, .row2 {
+        flex-direction: row;
+        justify-content: space-between; 
+        width: 100%;
+    }
+
+    .row1 .card, .row2 .card {
+        flex: 1; 
+        max-width: 48%; 
     }
 }

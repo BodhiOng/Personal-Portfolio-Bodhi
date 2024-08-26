@@ -7,8 +7,8 @@
     font-family: 'Roboto Mono', Arial, sans-serif;
     color: white;
     text-align: center;
-    padding: 20px; 
-    padding-top: 180px;
+    padding: 60px 20px; 
+    margin: 40px 0px;
 }
 
 .project-title {
@@ -23,7 +23,7 @@
     width: 100%;
 }
 
-.card {
+.card-projects {
     background-color: rgb(78, 119, 159);
     border: none;
     border-radius: 10px;
@@ -31,7 +31,7 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card:hover {
+.card-projects:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -70,8 +70,8 @@
         gap: 20px;
     }
 
-    .card {
-        width: 80%;
+    .card-projects {
+        width: 100% !important;
     }
 }
 
@@ -80,15 +80,20 @@
         gap: 15px;
     }
 
-    .card {
-        width: 90%;
+    .card-projects {
+        width: 100% !important;
     }
 
     .card-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .card-text {
-        font-size: 0.95rem;
+        font-size: 0.6rem;
+        margin-bottom: 10px;
+    }
+
+    .card-link {
+        font-size: 0.8rem;
     }
 }

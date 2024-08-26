@@ -9,64 +9,49 @@ function Education() {
         <div className='education'>
             <h1>Education</h1>
             <div className='row1'>
-                <div className='card mb-3' style={{ maxWidth: '540px' }}>
-                    <div className='row g-0'>
-                        <div className='col-md-4 custom-card'>
-                            <img src={apupicture} className='img-fluid rounded-start' alt='University Logo'/>
-                        </div>
-                        <div className='col-md-8'>
-                            <div className='card-body'>
-                                <h5 className='card-title'>Asia Pacific University</h5>
-                                <p className='card-text'>Bachelor’s degree in Software Engineering</p>
-                                <p className='card-text'>2023 - 2026</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='card mb-3' style={{ maxWidth: '540px' }}>
-                    <div className='row g-0'>
-                        <div className='col-md-4 custom-card'>
-                            <img src={gloriapicture} className='img-fluid rounded-start' alt='School Logo'/>
-                        </div>
-                        <div className='col-md-8'>
-                            <div className='card-body'>
-                                <h5 className='card-title'>SMA Kristen Gloria 2</h5>
-                                <p className='card-text'>High School Diploma (Science Department)</p>
-                                <p className='card-text'>2020 - 2023</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <EducationCard
+                    image={apupicture}
+                    title="Asia Pacific University"
+                    text1="Bachelor’s degree in Software Engineering"
+                    text2="2023 - 2026"
+                />
+                <EducationCard
+                    image={gloriapicture}
+                    title="SMA Kristen Gloria 2"
+                    text1="High School Diploma (Science Department)"
+                    text2="2020 - 2023"
+                />
             </div>
             <div className='row2'>
-                <div className='card mb-3' style={{ maxWidth: '540px' }}>
-                    <div className='row g-0'>
-                        <div className='col-md-4 custom-card'>
-                            <img src={penaburpicture} className='img-fluid rounded-start' alt='School Logo'/>
-                        </div>
-                        <div className='col-md-8'>
-                            <div className='card-body'>
-                                <h5 className='card-title'>SMPK 2 Penabur</h5>
-                                <p className='card-text'>Middle School Diploma</p>
-                                <p className='card-text'>2017-2020</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <EducationCard
+                    image={penaburpicture}
+                    title="SMPK 2 Penabur"
+                    text1="Middle School Diploma"
+                    text2="2017 - 2020"
+                />
+                <EducationCard
+                    image={penaburpicture}
+                    title="SDK 1 Penabur"
+                    text1="Elementary School Diploma"
+                    text2="2011 - 2017"
+                />
+            </div>
+        </div>
+    );
+}
 
-                <div className='card mb-3' style={{ maxWidth: '540px' }}>
-                    <div className='row g-0'>
-                        <div className='col-md-4 custom-card'>
-                            <img src={penaburpicture} className='img-fluid rounded-start' alt='School Logo'/>
-                        </div>
-                        <div className='col-md-8'>
-                            <div className='card-body'>
-                                <h5 className='card-title'>SDK 1 Penabur</h5>
-                                <p className='card-text'>Elementary School Diploma</p>
-                                <p className='card-text'>2011 - 2017</p>
-                            </div>
-                        </div>
+function EducationCard({ image, title, text1, text2 }) {
+    return (
+        <div className='card mb-3' style={{ maxWidth: '540px' }}>
+            <div className='row g-0'>
+                <div className='col-md-4 custom-card'>
+                    <img src={image} className='img-fluid rounded-start' alt='School Logo' />
+                </div>
+                <div className='col-md-8'>
+                    <div className='card-body'>
+                        <h5 className='card-title'>{title}</h5>
+                        <p className='card-text'>{text1}</p>
+                        <p className='card-text'>{text2}</p>
                     </div>
                 </div>
             </div>
