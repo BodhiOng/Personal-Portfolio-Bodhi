@@ -108,7 +108,7 @@ function SkillsNav() {
                     </div>
                 </div>
 
-                <p className='ending-msg mt-5 mx-auto text-center'> I am always eager to learn and embrace new challenges! No learning curve intimidates me if it means I can accomplish the task at hand.</p>
+                <p className='ending-msg w-50 mt-5 mx-auto text-center'> I am always eager to learn and embrace new challenges! No learning curve intimidates me if it means I can accomplish the task at hand.</p>
             </div>
         </div>
     );
