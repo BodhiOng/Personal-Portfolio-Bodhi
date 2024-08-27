@@ -33,10 +33,9 @@ function SidebarNav() {
             <nav className={`sidebar-nav ${isVisible ? 'show' : ''}`}>
                 <button onClick={() => scrollToSection('home-bookmark')}>Home</button>
                 <button onClick={() => scrollToSection('about-bookmark')}>About Me</button>
+                <button onClick={() => scrollToSection('education-bookmark')}>Education</button>
                 <button onClick={() => scrollToSection('myskills-bookmark')}>My skills</button>
                 <button onClick={() => scrollToSection('projects-bookmark')}>Projects</button>
-                <button onClick={() => scrollToSection('education-bookmark')}>Education</button>
-                <button onClick={() => scrollToSection('getintouch-bookmark')}>Contact Me</button>
             </nav>
         </div>
     );

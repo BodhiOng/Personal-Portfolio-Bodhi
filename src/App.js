@@ -17,14 +17,14 @@ function App() {
             <section id='about-bookmark'>
               <About/>
             </section>
+            <section id='education-bookmark'>
+              <Education/>
+            </section>
             <section id='myskills-bookmark'>
               <MySkills/>
             </section>
             <section id='projects-bookmark'>
               <Projects/>
-            </section>
-            <section id='education-bookmark'>
-              <Education/>
             </section>
         </div>
     </div>
