@@ -42,17 +42,15 @@ function Education() {
 
 function EducationCard({ image, title, text1, text2 }) {
     return (
-        <div className='education-card mb-3' style={{ maxWidth: '540px' }}>
-            <div className='row g-0'>
-                <div className='col-md-4 custom-card'>
-                    <img src={image} className='img-fluid rounded-start' alt='School Logo' />
+        <div className='education-card'>
+            <div className='row'>
+                <div className='custom-card'>
+                    <img src={image} className='img-fluid' alt='School Logo' />
                 </div>
-                <div className='col-md-8'>
-                    <div className='card-body'>
-                        <h5 className='card-title'>{title}</h5>
-                        <p className='card-text'>{text1}</p>
-                        <p className='card-text'>{text2}</p>
-                    </div>
+                <div className='card-body'>
+                    <h5 className='card-title'>{title}</h5>
+                    <p className='card-text'>{text1}</p>
+                    <p className='card-text'>{text2}</p>
                 </div>
             </div>
         </div>
