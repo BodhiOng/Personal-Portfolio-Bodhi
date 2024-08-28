@@ -71,7 +71,7 @@ function SkillsNav() {
                             {[
                                 { src: postgresqllogo, alt: "PostgreSQL", label: "PostgreSQL" },
                                 { src: mysqllogo, alt: "MySQL", label: "MySQL" },
-                                { src: mssqllogo, alt: "MSSQL", label: "Microsoft SQL Server" },
+                                { src: mssqllogo, alt: "MSSQL", label: <>Microsoft<br/>SQL Server</> },
                                 { src: mongodblogo, alt: "MongoDB", label: "MongoDB" },
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>

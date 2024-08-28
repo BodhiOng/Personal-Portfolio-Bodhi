@@ -12,7 +12,7 @@ function Education() {
                 <EducationCard
                     image={apupicture}
                     title="Asia Pacific University"
-                    text1="Bachelor’s degree in Software Engineering"
+                    text1="Bachelor’s Degree In Software Engineering"
                     text2="2023 - 2026"
                 />
                 <EducationCard
