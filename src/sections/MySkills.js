@@ -15,6 +15,7 @@ import mssqllogo from '../images/mssql-logo.png';
 import mongodblogo from '../images/mongodb-logo.png';
 import gitlogo from '../images/git-logo.png';
 import npmlogo from '../images/npm-logo.png';
+import postmanlogo from '../images/postman-logo.png';
 
 function SkillsNav() {
     return (
@@ -93,6 +94,7 @@ function SkillsNav() {
                             {[
                                 { src: gitlogo, alt: "Git", label: "Git" },
                                 { src: npmlogo, alt: "npm", label: "npm" },
+                                { src: postmanlogo, alt: "Postman", label: "Postman"}
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>
                                     <img 
