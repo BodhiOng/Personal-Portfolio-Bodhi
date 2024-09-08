@@ -6,6 +6,7 @@ import typescriptlogo from '../images/typescript-logo.png';
 import csharplogo from '../images/csharp-logo.png';
 import pythonlogo from '../images/python-logo.png';
 import javalogo from '../images/java-logo.png';
+import rlogo from '../images/r-logo.png';
 import bootstraplogo from '../images/bootstrap-logo.png';
 import reactlogo from '../images/react-logo.png';
 import expresslogo from '../images/express-logo.png';
@@ -32,6 +33,7 @@ function SkillsNav() {
                             { src: pythonlogo, alt: "Python", label: "Python" },
                             { src: csharplogo, alt: "C#", label: "C#" },
                             { src: javalogo, alt: "Java", label: "Java" },
+                            { src: rlogo, alt: "R", label: "R" },
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
@@ -94,7 +96,7 @@ function SkillsNav() {
                             {[
                                 { src: gitlogo, alt: "Git", label: "Git" },
                                 { src: npmlogo, alt: "npm", label: "npm" },
-                                { src: postmanlogo, alt: "Postman", label: "Postman"}
+                                { src: postmanlogo, alt: "Postman", label: <>Postman<br/>API</>}
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>
                                     <img 
