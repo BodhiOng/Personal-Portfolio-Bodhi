@@ -17,6 +17,7 @@ import mongodblogo from '../images/mongodb-logo.png';
 import gitlogo from '../images/git-logo.png';
 import npmlogo from '../images/npm-logo.png';
 import postmanlogo from '../images/postman-logo.png';
+import ubuntulogo from '../images/ubuntu-logo.png';
 
 function SkillsNav() {
     return (
@@ -96,7 +97,8 @@ function SkillsNav() {
                             {[
                                 { src: gitlogo, alt: "Git", label: "Git" },
                                 { src: npmlogo, alt: "npm", label: "npm" },
-                                { src: postmanlogo, alt: "Postman", label: <>Postman<br/>API</>}
+                                { src: postmanlogo, alt: "Postman", label: <>Postman<br/>API</>},
+                                { src: ubuntulogo, alt: "Ubuntu", label: "Ubuntu"}
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>
                                     <img 
