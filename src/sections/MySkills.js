@@ -15,9 +15,8 @@ import mysqllogo from '../images/mysql-logo.png';
 import mssqllogo from '../images/mssql-logo.png';
 import mongodblogo from '../images/mongodb-logo.png';
 import gitlogo from '../images/git-logo.png';
-import npmlogo from '../images/npm-logo.png';
 import postmanlogo from '../images/postman-logo.png';
-import ubuntulogo from '../images/ubuntu-logo.png';
+import linuxlogo from '../images/linux-logo.png';
 
 function SkillsNav() {
     return (
@@ -96,9 +95,8 @@ function SkillsNav() {
                         <div className="logos-container d-flex">
                             {[
                                 { src: gitlogo, alt: "Git", label: "Git" },
-                                { src: npmlogo, alt: "npm", label: "npm" },
                                 { src: postmanlogo, alt: "Postman", label: <>Postman<br/>API</>},
-                                { src: ubuntulogo, alt: "Ubuntu", label: "Ubuntu"}
+                                { src: linuxlogo, alt: "Linux", label: "Linux"}
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>
                                     <img 
