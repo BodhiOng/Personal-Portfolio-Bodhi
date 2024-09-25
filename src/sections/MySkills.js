@@ -3,10 +3,7 @@ import './MySkills.css';
 
 import javascriptlogo from '../images/javascript-logo.png';
 import typescriptlogo from '../images/typescript-logo.png';
-import csharplogo from '../images/csharp-logo.png';
 import pythonlogo from '../images/python-logo.png';
-import javalogo from '../images/java-logo.png';
-import rlogo from '../images/r-logo.png';
 import bootstraplogo from '../images/bootstrap-logo.png';
 import reactlogo from '../images/react-logo.png';
 import expresslogo from '../images/express-logo.png';
@@ -30,10 +27,7 @@ function SkillsNav() {
                         {[
                             { src: javascriptlogo, alt: "JavaScript", label: "JavaScript" },
                             { src: typescriptlogo, alt: "TypeScript", label: "TypeScript" },
-                            { src: pythonlogo, alt: "Python", label: "Python" },
-                            { src: csharplogo, alt: "C#", label: "C#" },
-                            { src: javalogo, alt: "Java", label: "Java" },
-                            { src: rlogo, alt: "R", label: "R" },
+                            { src: pythonlogo, alt: "Python", label: "Python" }
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
