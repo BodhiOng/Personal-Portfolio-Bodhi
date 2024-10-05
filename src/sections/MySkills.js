@@ -9,11 +9,12 @@ import reactlogo from '../images/react-logo.png';
 import expresslogo from '../images/express-logo.png';
 import postgresqllogo from '../images/postgresql-logo.png';
 import mysqllogo from '../images/mysql-logo.png';
-import mssqllogo from '../images/mssql-logo.png';
 import mongodblogo from '../images/mongodb-logo.png';
 import gitlogo from '../images/git-logo.png';
 import postmanlogo from '../images/postman-logo.png';
 import linuxlogo from '../images/linux-logo.png';
+import tailwindcsslogo from '../images/tailwindcss-logo.png';
+import nextjslogo from '../images/nextjs-logo.png';
 
 function SkillsNav() {
     return (
@@ -47,8 +48,10 @@ function SkillsNav() {
                     <div className="logos-container d-flex">
                         {[
                             { src: expresslogo, alt: "Express.js", label: "Express.js" },
+                            { src: nextjslogo, alt: "Next.js", label: "Next.js" },
                             { src: reactlogo, alt: "React.js", label: "React.js" },
                             { src: bootstraplogo, alt: "Bootstrap", label: "Bootstrap" },
+                            { src: tailwindcsslogo, alt: "Tailwind CSS", label: <>Tailwind<br/>CSS</> },
                         ].map((item, index) => (
                             <div className="text-left logo-item" key={index}>
                                 <img 
@@ -68,7 +71,6 @@ function SkillsNav() {
                             {[
                                 { src: postgresqllogo, alt: "PostgreSQL", label: "PostgreSQL" },
                                 { src: mysqllogo, alt: "MySQL", label: "MySQL" },
-                                { src: mssqllogo, alt: "MSSQL", label: <>Microsoft<br/>SQL Server</> },
                                 { src: mongodblogo, alt: "MongoDB", label: "MongoDB" },
                             ].map((item, index) => (
                                 <div className="text-left logo-item" key={index}>
@@ -84,7 +86,7 @@ function SkillsNav() {
                         </div>
                     </div>
 
-                    <h2 className="tools mt-4 mb-4">Tools</h2>
+                    <h2 className="tools mt-4 mb-4">Others</h2>
                     <div className="d-flex justify-content-center align-items-center">
                         <div className="logos-container d-flex">
                             {[
