@@ -1,9 +1,0 @@
-body {
-  display: flex;
-  justify-content: center;
-  background-image: linear-gradient(to right, #2b4450, #1f5b73, #09689c);
-}
-
-html, body {
-  overflow-x: hidden;
-}
