@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-Access the portfolio at https://bodhi-ong.vercel.app/
+Access the portfolio at [Bodhi's Portfolio](https://bodhi-ong.vercel.app/)
 
 ## Project Structure
 
