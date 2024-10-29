@@ -15,40 +15,41 @@ const profileData: ProfileProps[] = [
     {
         name: "Bodhidharma Ong",
         role: "Fullstack Developer",
-        profilePicture: bodhipic, // Remove the curly braces
+        profilePicture: bodhipic,
         linkedinUrl: "https://www.linkedin.com/in/bodhidharma-ong-483839150/",
         githubUrl: "https://github.com/BodhiOng",
         location: "Kuala Lumpur, Malaysia",
     }
 ];
 
-const ProfileCard: React.FC = () => { // Remove ProfileProps from FC since we're using profileData
+const Profile: React.FC = () => { 
     return (
-        <div className="max-w-2xl mx-auto py-6 overflow-hidden">
-            <div className="p-6 flex items-center gap-6">
+        <div className="max-w-2xl mx-auto flex items-center justify-center px-4 sm:px-6">
                 {profileData.map((item, index) => (
-                    <div key={index} className="flex items-center gap-6 w-full">
-                        <div className="flex-shrink-0">
+                    <div key={index} className="flex flex-col py-6 sm:flex-row items-center sm:items-start gap-4 sm:gap-6 w-full">
+                        <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 relative">
                             <Image
                                 src={item.profilePicture}
                                 alt={`${item.name}'s profile`}
-                                className="w-24 h-24 rounded-full object-cover ring-2 ring-gray-700 shadow-lg hover:ring-blue-500 transition-all duration-300"
+                                width={160}
+                                height={160}
+                                className="rounded-full object-cover ring-2 ring-gray-700 shadow-lg w-full h-full"
                             />
                         </div>
-                        <div className="flex-grow">
-                            <h2 className="text-2xl font-bold text-gray-100 mb-1 tracking-wide">
+                        <div className="flex-grow text-center sm:text-left flex flex-col justify-center">
+                            <h2 className="text-xl sm:text-2xl font-bold text-gray-100 mb-1 tracking-wide">
                                 {item.name}
                             </h2>
                             <p className="text-gray-400 text-sm mb-2">
                                 {item.role}
                             </p>
-                            <div className="flex items-center text-gray-400 text-sm mb-5">
+                            <div className="flex items-center justify-center sm:justify-start text-gray-400 text-sm mb-5">
                                 <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M10 0C6.12 0 3 3.12 3 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.88-3.12-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S8.62 4.5 10 4.5s2.5 1.12 2.5 2.5S11.38 9.5 10 9.5z" />
                                 </svg>
                                 {item.location}
                             </div>
-                            <div className="flex gap-3">
+                            <div className="flex gap-3 justify-center sm:justify-start">
                                 <a
                                     href={item.linkedinUrl}
                                     target="_blank"
@@ -81,9 +82,8 @@ const ProfileCard: React.FC = () => { // Remove ProfileProps from FC since we're
                         </div>
                     </div>
                 ))}
-            </div>
         </div>
     );
 };
 
-export default ProfileCard;
+export default Profile;
