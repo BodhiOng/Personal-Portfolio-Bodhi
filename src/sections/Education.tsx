@@ -14,7 +14,7 @@ const educationData: EducationItem[] = [
         institution: "Asia Pacific University (APU)",
         degree: "Bachelor of Science (Hons) In Software Engineering",
         description: "Specialized in full-stack development during my free time, while gaining foundational knowledge in programming, IT fundamentals, algorithms, system analysis, and software development through university studies.",
-        gpa: "3.25/4.00"
+        gpa: "3.25"
     },
 ];
 

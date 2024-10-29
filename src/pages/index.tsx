@@ -2,6 +2,7 @@ import React from 'react';
 import ProfileCard from '../sections/Profile';
 import AboutMe from '@/sections/AboutMe';
 import Education from '@/sections/Education';
+import Skills from '@/sections/Skills'
 
 
 const App: React.FC = () => {
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <ProfileCard/>
         <AboutMe/>
         <Education/>
+        <Skills/>
       </div>
     </div>
   );
