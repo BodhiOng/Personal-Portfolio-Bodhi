@@ -1,21 +1,24 @@
+import React, { memo, useState } from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
 
-import javascriptpic from '../../public/javascript.png';
-import typescriptpic from '../../public/typescript.png';
-import pythonpic from '../../public/python.png';
-import expresspic from '../../public/expressjs.png';
-import nextjspic from '../../public/nextjs.png';
-import reactpic from '../../public/reactjs.png';
-import bootstrappic from '../../public/bootstrap.png';
-import tailwindpic from '../../public/tailwindcss.png';
-import postgresqlpic from '../../public/postgresql.png';
-import mysqlpic from '../../public/mysql.png';
-import mongodbpic from '../../public/mongodb.png';
-import gitpic from '../../public/git.png';
-import postmanapipic from '../../public/postmanapi.png';
-import linuxpic from '../../public/linux.png';
-
+// Explicitly typed skillIcons object
+const skillIcons: { [key: string]: StaticImageData } = {
+    JavaScript: require('../../public/javascript.png'),
+    TypeScript: require('../../public/typescript.png'),
+    Python: require('../../public/python.png'),
+    'Express.js': require('../../public/expressjs.png'),
+    'Next.js': require('../../public/nextjs.png'),
+    'React.js': require('../../public/reactjs.png'),
+    Bootstrap: require('../../public/bootstrap.png'),
+    'Tailwind CSS': require('../../public/tailwindcss.png'),
+    PostgreSQL: require('../../public/postgresql.png'),
+    MySQL: require('../../public/mysql.png'),
+    MongoDB: require('../../public/mongodb.png'),
+    Git: require('../../public/git.png'),
+    'Postman API': require('../../public/postmanapi.png'),
+    Linux: require('../../public/linux.png')
+};
 
 interface SkillCardProps {
     name: string;
@@ -24,112 +27,86 @@ interface SkillCardProps {
     textColor?: string;
 }
 
-const SkillCard = ({ name, icon, bgColor = "bg-white", textColor = "text-white"}: SkillCardProps) => {
+const SkillCard = memo(({ name, icon, bgColor = "bg-white", textColor = "text-white"}: SkillCardProps) => {
     return (
         <div
-            className={`flex items-center justify-center p-4 rounded-lg ${textColor} ${bgColor} shadow-sm-full`}
+            className={`flex items-center justify-center p-3 rounded-lg ${textColor} ${bgColor} shadow-sm-full`}
             style={{ backgroundColor: bgColor.startsWith('#') ? bgColor : '' }}
         >
-            <div className="w-10 h-10 flex items-center justify-center">
+            <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
                 <Image
                     src={icon}
                     alt={`${name} icon`}
-                    className="w-8 h-8 object-contain"
+                    className="w-6 h-6 md:w-8 md:h-8 object-contain"
                     width={32}
                     height={32}
                 />
             </div>
-            <div className="hidden md:flex ml-4 flex flex-col items-center">
-                <span className="font-bold">{name}</span>
+            <div className="hidden md:flex ml-3 flex-col items-center">
+                <span className={`text-sm font-semibold ${textColor}`}>{name}</span>
             </div>
         </div>
     );
-};
+});
 
 const skills = [
-    {
-        name: "JavaScript",
-        icon: javascriptpic,
-        bgColor: "#f7df1e",
-        textColor: "text-black"
-    },
-    {
-        name: "TypeScript",
-        icon: typescriptpic,
-        bgColor: "#3178c6",
-    },
-    {
-        name: "Python",
-        icon: pythonpic,
-        bgColor: "#306998",
-    },
-    {
-        name: "Express.js",
-        icon: expresspic,
-        bgColor: "#333333",
-    },
-    {
-        name: "Next.js",
-        icon: nextjspic,
-        bgColor: "#696969",
-    },
-    {
-        name: "React.js",
-        icon: reactpic,
-        bgColor: "#333333",
-    },
-    {
-        name: "Bootstrap",
-        icon: bootstrappic,
-        bgColor: "#563D7C",
-    },
-    {
-        name: "Tailwind CSS",
-        icon: tailwindpic,
-        bgColor: "#1E3A8A",
-    },
-    {
-        name: "PostgreSQL",
-        icon: postgresqlpic,
-        bgColor: "#336791",
-    },
-    {
-        name: "MySQL",
-        icon: mysqlpic,
-        bgColor: "#003B5C",
-    },
-    {
-        name: "MongoDB",
-        icon: mongodbpic,
-        bgColor: "#3D8E2E",
-    },
-    {
-        name: "Git",
-        icon: gitpic,
-        bgColor: "#8B0000",
-    },
-    {
-        name: "Postman API",
-        icon: postmanapipic,
-        bgColor: "#E65100",
-    },
-    {
-        name: "Linux",
-        icon: linuxpic,
-        bgColor: "#333333",
-    },
-];
+    { name: "JavaScript", bgColor: "#f7df1e", textColor: "text-black", category: "Languages" },
+    { name: "TypeScript", bgColor: "#3178c6", category: "Languages" },
+    { name: "Python", bgColor: "#306998", category: "Languages" },
+    { name: "Express.js", bgColor: "#333333", category: "Frameworks" },
+    { name: "Next.js", bgColor: "#696969", category: "Frameworks" },
+    { name: "React.js", bgColor: "#333333", category: "Frameworks" },
+    { name: "Bootstrap", bgColor: "#563D7C", category: "Frameworks" },
+    { name: "Tailwind CSS", bgColor: "#1E3A8A", category: "Frameworks" },
+    { name: "PostgreSQL", bgColor: "#336791", category: "DBMS" },
+    { name: "MySQL", bgColor: "#003B5C", category: "DBMS" },
+    { name: "MongoDB", bgColor: "#001E2B", category: "DBMS" },
+    { name: "Git", bgColor: "#8B0000", category: "Tools" },
+    { name: "Postman API", bgColor: "#E65100", category: "Tools" },
+    { name: "Linux", bgColor: "#333333", category: "Tools" },
+].map(skill => ({
+    ...skill,
+    icon: skillIcons[skill.name],
+    textColor: skill.textColor || "#f5f5f5"
+}));
 
 const Skills = () => {
+    const [activeFilter, setActiveFilter] = useState("All");
+    
+    const filters = ["All", "Languages", "Frameworks", "DBMS", "Tools"];
+    
+    const filteredSkills = activeFilter === "All" 
+        ? skills 
+        : skills.filter(skill => skill.category === activeFilter);
+
     return (
         <section className="max-w-2xl mx-auto py-12 px-6">
-            <h2 className="text-3xl font-bold mb-8 text-center">
+            <h2 className="text-3xl font-bold mb-6 text-center">
                 Technical Skills
             </h2>
-            <div className="grid grid-cols-3 md:grid-cols-2 gap-4 justify-between justify-items-stretch">
-                {skills.map((skill, index) => (
+            
+            {/* Filters */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+                {filters.map((filter) => (
+                    <button
+                        key={filter}
+                        onClick={() => setActiveFilter(filter)}
+                        className={`
+                            px-3 py-2 h-10 flex items-center justify-center text-sm rounded-lg transition-all duration-300
+                            ${activeFilter === filter 
+                                ? 'bg-gray-700 text-white' 
+                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'}
+                        `}
+                    >
+                        {filter}
+                    </button>
+                ))}
+            </div>
+            
+            <div className="grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-3 justify-between justify-items-stretch">
+                {filteredSkills.map((skill) => (
                     <SkillCard
-                        key={index}
+                        key={skill.name}
                         name={skill.name}
                         icon={skill.icon}
                         bgColor={skill.bgColor}

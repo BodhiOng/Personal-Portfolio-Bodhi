@@ -8,7 +8,7 @@ const AboutMe = () => {
                 About Me
             </h1>
 
-            <div className="max-w-max space-y-6 text-gray-300 leading-relaxed text-justify">
+            <div className="max-w-max space-y-6 text-gray-300 leading-relaxed text-left">
                 <p className="font-bold ">
                     As a dedicated Software Engineering student at Asia Pacific University (APU), I am pursuing a career in full-stack development with a strong interest in back-end work.
                 </p>
