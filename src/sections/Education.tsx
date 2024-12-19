@@ -15,8 +15,7 @@ const educationData: EducationItem[] = [
         institution: "Asia Pacific University (APU)",
         degree: "Bachelor of Science (Hons) In Software Engineering",
         description: "Specialized in full-stack development during my free time, while gaining foundational knowledge in programming, IT fundamentals, algorithms, system analysis, and software development through university studies.",
-        gpa: "3.25",
-        coursesLink: "https://www.linkedin.com/in/bodhidharma-ong-483839150/details/courses/"
+        gpa: "3.25"
     },
 ];
 
@@ -56,14 +55,6 @@ const Education = () => {
                             <p className="text-gray-500 mt-2">
                                 {item.description}
                             </p>
-                            {item.coursesLink && (
-                                <a 
-                                    href={item.coursesLink} 
-                                    className="text-blue-500 hover:underline hover:text-blue-400 transition-colors mt-2 inline-block"
-                                >
-                                    Courses I've Taken
-                                </a>
-                            )}
                         </div>
                     ))}
                 </div>
