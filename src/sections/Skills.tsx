@@ -56,7 +56,6 @@ const skills = [
     { name: "Express.js", bgColor: "#333333", category: "Frameworks" },
     { name: "Next.js", bgColor: "#696969", category: "Frameworks" },
     { name: "React.js", bgColor: "#333333", category: "Frameworks" },
-    { name: "Bootstrap", bgColor: "#563D7C", category: "Frameworks" },
     { name: "Tailwind CSS", bgColor: "#1E3A8A", category: "Frameworks" },
     { name: "PostgreSQL", bgColor: "#336791", category: "DBMS" },
     { name: "MySQL", bgColor: "#003B5C", category: "DBMS" },
