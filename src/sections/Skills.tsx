@@ -17,7 +17,8 @@ const skillIcons: { [key: string]: StaticImageData } = {
     MongoDB: require('../../public/mongodb.png'),
     Git: require('../../public/git.png'),
     'Postman API': require('../../public/postmanapi.png'),
-    Linux: require('../../public/linux.png')
+    Linux: require('../../public/linux.png'),
+    GitHub: require('../../public/github.png'),
 };
 
 interface SkillCardProps {
@@ -61,6 +62,7 @@ const skills = [
     { name: "MySQL", bgColor: "#003B5C", category: "DBMS" },
     { name: "MongoDB", bgColor: "#001E2B", category: "DBMS" },
     { name: "Git", bgColor: "#8B0000", category: "Tools" },
+    { name: "GitHub", bgColor: "#181717", category: "Tools" },
     { name: "Postman API", bgColor: "#E65100", category: "Tools" },
     { name: "Linux", bgColor: "#333333", category: "Tools" },
 ].map(skill => ({
