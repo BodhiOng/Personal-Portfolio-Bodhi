@@ -24,7 +24,7 @@ const profileData: ProfileProps[] = [
 
 const Profile: React.FC = () => { 
     return (
-        <div className="max-w-2xl mx-auto flex items-center justify-center px-4 sm:px-6">
+        <div className="max-w-2xl mx-auto flex items-center justify-center px-4 sm:px-6 select-none">
                 {profileData.map((item, index) => (
                     <div key={index} className="flex flex-col py-6 sm:flex-row items-center sm:items-start gap-4 sm:gap-6 w-full">
                         <div className="flex-shrink-0 w-32 h-32 sm:w-40 sm:h-40 relative">
@@ -33,6 +33,7 @@ const Profile: React.FC = () => {
                                 alt={`${item.name}'s profile`}
                                 width={160}
                                 height={160}
+                                draggable={false}
                                 className="rounded-full object-cover ring-2 ring-gray-700 shadow-lg w-full h-full"
                             />
                         </div>

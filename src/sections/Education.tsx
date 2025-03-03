@@ -14,14 +14,14 @@ const educationData: EducationItem[] = [
         period: "2023 - 2026",
         institution: "Asia Pacific University (APU)",
         degree: "Bachelor of Science (Hons) In Software Engineering",
-        description: "Specialized in full-stack development during my free time, while gaining foundational knowledge in programming, IT fundamentals, algorithms, system analysis, and software development through university studies.",
+        description: "I gained comprehensive knowledge in software development through mastering fundamental programming concepts, database management, and web development technologies. My studies covered essential areas including software architecture, system analysis, design patterns, software testing, and cloud computing, complemented by hands-on experience in enterprise systems and user experience design. Through various practical projects, I developed strong capabilities in implementing modern development methodologies and creating efficient software solutions.",
         gpa: "3.25"
     },
 ];
 
 const Education = () => {
     return (
-        <section className="py-8">
+        <section className="py-8 select-none">
             <div className="max-w-2xl mx-auto p-6">
                 <h2 className="text-2xl font-bold text-foreground mb-3">Education</h2>
 

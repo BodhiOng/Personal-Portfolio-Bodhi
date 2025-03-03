@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutMe = () => {
     return (
-        <div className="max-w-2xl mx-auto p-6">
+        <div className="max-w-2xl mx-auto p-6 select-none">
 
             <h1 className="text-2xl font-bold text-gray-100 mb-6 border-b border-gray-700 pb-3">
                 About Me

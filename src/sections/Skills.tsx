@@ -46,6 +46,7 @@ const SkillCard = memo(({ name, icon, bgColor = "bg-white", textColor = "text-wh
                     className="w-6 h-6 md:w-8 md:h-8 object-contain"
                     width={32}
                     height={32}
+                    draggable={false}
                 />
             </div>
             <div className="hidden md:flex ml-3 flex-col items-center">
@@ -90,7 +91,7 @@ const Skills = () => {
         : skills.filter(skill => skill.category === activeFilter);
 
     return (
-        <section className="max-w-2xl mx-auto py-12 px-6">
+        <section className="max-w-2xl mx-auto py-12 px-6 select-none">
             <h2 className="text-3xl font-bold mb-6 text-center">
                 Technical Skills
             </h2>
