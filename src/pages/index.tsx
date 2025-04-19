@@ -3,7 +3,7 @@ import Profile from '../sections/Profile';
 import AboutMe from '@/sections/AboutMe';
 import Education from '@/sections/Education';
 import Skills from '@/sections/Skills'
-
+import Projects from '@/sections/Projects';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +13,7 @@ const App: React.FC = () => {
         <AboutMe/>
         <Education/>
         <Skills/>
+        <Projects/>
       </div>
     </div>
   );

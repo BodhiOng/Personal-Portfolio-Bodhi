@@ -14,7 +14,7 @@ const educationData: EducationItem[] = [
         period: "2023 - 2026",
         institution: "Asia Pacific University (APU)",
         degree: "Bachelor of Science (Hons) In Software Engineering",
-        description: "I gained comprehensive knowledge in software development through mastering fundamental programming concepts, database management, and web development technologies. My studies covered essential areas including software architecture, system analysis, design patterns, software testing, and cloud computing, complemented by hands-on experience in enterprise systems and user experience design. Through various practical projects, I developed strong capabilities in implementing modern development methodologies and creating efficient software solutions.",
+        description: "Courses taken: Programming with Python, Object Oriented Development with Java, Introduction To Object Oriented Programming, Mobile App Engineering, Introduction to Databases, Introduction to Networking, Data Structures, Software Architecture and Testing, Systems Analysis and Design, Operating Systems and Computer Architecture, Programming for Data Analysis, Requirements Engineering, Design Methods, Enterprise Systems, Digital Thinking and Innovation, Research Methods for Computing and Technology, Mathematical Concept For Computing, Computing Theory, Introduction to Artificial Intelligence",
         gpa: "3.25"
     },
 ];
