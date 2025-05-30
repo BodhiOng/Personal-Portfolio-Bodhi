@@ -1,140 +1,314 @@
-import React, { memo, useState } from 'react';
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaCode } from 'react-icons/fa';
+import { useDeviceDetect } from '../utils/deviceDetect';
 import Image from 'next/image';
-import { StaticImageData } from 'next/image';
-
-// Explicitly typed skillIcons object
-const skillIcons: { [key: string]: StaticImageData } = {
-    JavaScript: require('../../public/javascript.png'),
-    TypeScript: require('../../public/typescript.png'),
-    Python: require('../../public/python.png'),
-    'C#': require('../../public/csharp.png'),
-    Java: require('../../public/java.png'),
-    R: require('../../public/r.png'),
-    'C++': require('../../public/c++.png'),
-    Dart: require('../../public/dart.png'),
-    'Express.js': require('../../public/expressjs.png'),
-    'Next.js': require('../../public/nextjs.png'),
-    'React.js': require('../../public/reactjs.png'),
-    Bootstrap: require('../../public/bootstrap.png'),
-    'Tailwind CSS': require('../../public/tailwindcss.png'),
-    Flutter: require('../../public/flutter.png'),
-    PostgreSQL: require('../../public/postgresql.png'),
-    MySQL: require('../../public/mysql.png'),
-    MongoDB: require('../../public/mongodb.png'),
-    Git: require('../../public/git.png'),
-    'Postman API': require('../../public/postmanapi.png'),
-    Linux: require('../../public/linux.png'),
-    GitHub: require('../../public/github.png'),
-    'Microsoft SQL Server': require('../../public/mssql.png'),
-    Firebase: require('../../public/firebase.png'),
-};
 
 interface SkillCardProps {
     name: string;
-    icon: StaticImageData;
+    iconPath: string;
     bgColor?: string;
     textColor?: string;
     textSize?: string;
 }
 
-const SkillCard = memo(({ name, icon, bgColor = "bg-white", textColor = "text-white", textSize = "text-sm"}: SkillCardProps) => {
+// Desktop version of the skill card
+const DesktopSkillCard = ({ name, iconPath, bgColor = "bg-white", textColor = "text-white", textSize = "text-sm"}: SkillCardProps) => {
     return (
-        <div
-            className={`flex items-center justify-center p-3 rounded-lg ${textColor} ${bgColor} shadow-sm-full`}
-            style={{ backgroundColor: bgColor.startsWith('#') ? bgColor : '' }}
+        <motion.div
+            className={`flex items-center justify-center p-4 rounded-xl ${textColor} shadow-lg backdrop-blur-sm border border-gray-700/30 w-full`}
+            style={{ 
+                backgroundColor: `${bgColor.startsWith('#') ? bgColor : ''}80`, // Adding 80 for 50% opacity
+                backdropFilter: 'blur(8px)'
+            }}
+            whileHover={{ scale: 1.05, y: -5 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
         >
-            <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                <Image
-                    src={icon}
-                    alt={`${name} icon`}
-                    className="w-6 h-6 md:w-8 md:h-8 object-contain"
-                    width={32}
-                    height={32}
-                    draggable={false}
-                />
+            <div className="flex items-center justify-center">
+                <div className="w-10 h-10 flex items-center justify-center relative mr-3">
+                    <div className="absolute inset-0 bg-white/10 rounded-full blur-sm"></div>
+                    <Image src={iconPath} alt={name} width={28} height={28} className="object-contain" />
+                </div>
+                <span className={`${textSize} font-semibold ${textColor} tracking-wide`}>{name}</span>
             </div>
-            <div className="hidden md:flex ml-3 flex-col items-center">
-                <span className={`${textSize} font-semibold ${textColor}`}>{name}</span>
-            </div>
-        </div>
+        </motion.div>
     );
-});
+};
+
+// Mobile version of the skill card
+const MobileSkillCard = ({ name, iconPath, bgColor = "bg-white", textColor = "text-white", textSize = "text-sm"}: SkillCardProps) => {
+    return (
+        <motion.div
+            className={`flex flex-col items-center justify-center p-3 rounded-xl ${textColor} shadow-lg backdrop-blur-sm border border-gray-700/30`}
+            style={{ 
+                backgroundColor: `${bgColor.startsWith('#') ? bgColor : ''}80`, // Adding 80 for 50% opacity
+                backdropFilter: 'blur(8px)'
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+        >
+            <div className="w-8 h-8 flex items-center justify-center relative mb-2">
+                <div className="absolute inset-0 bg-white/10 rounded-full blur-sm"></div>
+                <Image src={iconPath} alt={name} width={24} height={24} />
+            </div>
+            <span className={`${textSize} font-bold ${textColor} tracking-wide text-center`}>{name}</span>
+        </motion.div>
+    );
+};
 
 const skills = [
-    { name: "JavaScript", bgColor: "#C6A700", textColor: "text-black", category: "Languages" },
-    { name: "TypeScript", bgColor: "#1A4B8C", category: "Languages" },
-    { name: "Python", bgColor: "#1E4B6C", category: "Languages" },
-    { name: "C#", bgColor: "#3C1D8F", category: "Languages" },
-    { name: "Java", bgColor: "#1A365D", category: "Languages" },
-    { name: "R", bgColor: "#1A4B8C", category: "Languages" },
-    { name: "C++", bgColor: "#00599C", category: "Languages" },
-    { name: "Dart", bgColor: "#008080", category: "Languages" },
-    { name: "Express.js", bgColor: "#333333", category: "Frameworks" },
-    { name: "Next.js", bgColor: "#696969", category: "Frameworks" },
-    { name: "React.js", bgColor: "#333333", category: "Frameworks" },
-    { name: "Tailwind CSS", bgColor: "#1E3A8A", category: "Frameworks" },
-    { name: "Flutter", bgColor: "#1565C0", category: "Frameworks" },
-    { name: "PostgreSQL", bgColor: "#336791", category: "DBMS" },
-    { name: "MySQL", bgColor: "#003B5C", category: "DBMS" },
-    { name: "Microsoft SQL Server", bgColor: "#1A365D", category: "DBMS", textSize: "text-xs" },
-    { name: "MongoDB", bgColor: "#001E2B", category: "DBMS" },
-    { name: "Git", bgColor: "#8B0000", category: "Tools" },
-    { name: "GitHub", bgColor: "#181717", category: "Tools" },
-    { name: "Postman API", bgColor: "#E65100", category: "Tools" },
-    { name: "Linux", bgColor: "#333333", category: "Tools" },
-    { name: "Firebase", bgColor: "#E64A19", category: "Tools" },
-].map(skill => ({
-    ...skill,
-    icon: skillIcons[skill.name],
-    textColor: skill.textColor || "#f5f5f5"
-}));
+    { name: "JavaScript", bgColor: "#C6A700", textColor: "text-black", category: "Languages", textSize: "text-sm", iconPath: "/javascript.png" },
+    { name: "TypeScript", bgColor: "#1A4B8C", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/typescript.png" },
+    { name: "Python", bgColor: "#1E4B6C", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/python.png" },
+    { name: "C#", bgColor: "#3C1D8F", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/csharp.png" },
+    { name: "Java", bgColor: "#1A365D", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/java.png" },
+    { name: "R", bgColor: "#1A4B8C", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/r.png" },
+    { name: "C++", bgColor: "#00599C", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/c++.png" },
+    { name: "Dart", bgColor: "#008080", category: "Languages", textColor: "text-white", textSize: "text-sm", iconPath: "/dart.png" },
+    { name: "Express.js", bgColor: "#333333", category: "Frameworks", textColor: "text-white", textSize: "text-sm", iconPath: "/expressjs.png" },
+    { name: "Next.js", bgColor: "#696969", category: "Frameworks", textColor: "text-white", textSize: "text-sm", iconPath: "/nextjs.png" },
+    { name: "React.js", bgColor: "#333333", category: "Frameworks", textColor: "text-white", textSize: "text-sm", iconPath: "/reactjs.png" },
+    { name: "Tailwind CSS", bgColor: "#1E3A8A", category: "Frameworks", textColor: "text-white", textSize: "text-sm", iconPath: "/tailwindcss.png" },
+    { name: "Flutter", bgColor: "#1565C0", category: "Frameworks", textColor: "text-white", textSize: "text-sm", iconPath: "/flutter.png" },
+    { name: "PostgreSQL", bgColor: "#336791", category: "DBMS", textColor: "text-white", textSize: "text-sm", iconPath: "/postgresql.png" },
+    { name: "MySQL", bgColor: "#003B5C", category: "DBMS", textColor: "text-white", textSize: "text-sm", iconPath: "/mysql.png" },
+    { name: "MongoDB", bgColor: "#13AA52", category: "DBMS", textColor: "text-white", textSize: "text-sm", iconPath: "/mongodb.png" },
+    { name: "Microsoft SQL Server", bgColor: "#CC2927", category: "DBMS", textColor: "text-white", textSize: "text-xs", iconPath: "/mssql.png" },
+    { name: "Firebase", bgColor: "#F57C00", category: "DBMS", textColor: "text-white", textSize: "text-sm", iconPath: "/firebase.png" },
+    { name: "Git", bgColor: "#F05032", category: "Tools", textColor: "text-white", textSize: "text-sm", iconPath: "/git.png" },
+    { name: "GitHub", bgColor: "#333333", category: "Tools", textColor: "text-white", textSize: "text-sm", iconPath: "/github.png" },
+    { name: "Postman API", bgColor: "#FF6C37", category: "Tools", textColor: "text-white", textSize: "text-sm", iconPath: "/postmanapi.png" },
+    { name: "Linux", bgColor: "#333333", category: "Tools", textColor: "text-white", textSize: "text-sm", iconPath: "/linux.png" },
+];
 
-const Skills = () => {
-    const [activeFilter, setActiveFilter] = useState("All");
-    
+const skillCategories = [
+    {
+        name: "Languages",
+        skills: skills.filter(skill => skill.category === "Languages")
+    },
+    {
+        name: "Frameworks",
+        skills: skills.filter(skill => skill.category === "Frameworks")
+    },
+    {
+        name: "DBMS",
+        skills: skills.filter(skill => skill.category === "DBMS")
+    },
+    {
+        name: "Tools",
+        skills: skills.filter(skill => skill.category === "Tools")
+    },
+];
+
+// Mobile version of Skills component
+const MobileSkills: React.FC = () => {
+    const [activeFilter, setActiveFilter] = React.useState("All");
     const filters = ["All", "Languages", "Frameworks", "DBMS", "Tools"];
     
-    const filteredSkills = activeFilter === "All" 
-        ? skills 
-        : skills.filter(skill => skill.category === activeFilter);
-
+    // Filter skills based on selected category
+    const filteredSkills = React.useMemo(() => {
+        if (activeFilter === "All") {
+            return skills;
+        }
+        return skills.filter(skill => skill.category === activeFilter);
+    }, [activeFilter]);
+    
     return (
-        <section className="max-w-2xl mx-auto py-12 px-6 select-none">
-            <h2 className="text-3xl font-bold mb-6 text-center">
+        <motion.div 
+            className="p-4 backdrop-blur-sm rounded-xl shadow-lg w-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+        >
+            <motion.h2 
+                className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4 flex items-center gap-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                <FaCode className="text-blue-400" />
                 Technical Skills
-            </h2>
+            </motion.h2>
             
-            {/* Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {/* Filters - Horizontal scrollable on mobile */}
+            <div className="flex overflow-x-auto pb-2 mb-4 gap-2 bg-gray-900/30 p-2 rounded-lg border border-gray-700/30">
                 {filters.map((filter) => (
-                    <button
+                    <motion.button
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
                         className={`
-                            px-3 py-2 h-10 flex items-center justify-center text-sm rounded-lg transition-all duration-300
+                            px-3 py-1.5 flex-shrink-0 flex items-center justify-center text-xs rounded-lg transition-all duration-300
                             ${activeFilter === filter 
-                                ? 'bg-gray-700 text-white' 
-                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'}
+                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
+                                : 'bg-gray-800/70 text-gray-300 hover:bg-gray-700 hover:text-white'}
                         `}
+                        whileTap={{ scale: 0.95 }}
                     >
                         {filter}
-                    </button>
+                    </motion.button>
                 ))}
             </div>
             
-            <div className="grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-3 justify-between justify-items-stretch">
-                {filteredSkills.map((skill) => (
-                    <SkillCard
-                        key={skill.name}
-                        name={skill.name}
-                        icon={skill.icon}
-                        bgColor={skill.bgColor}
-                        textColor={skill.textColor}
-                        textSize={skill.textSize}
-                    />
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeFilter}
+                    className="grid grid-cols-2 gap-2"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 25,
+                        duration: 0.4
+                    }}
+                >
+                    {filteredSkills.map((skill, skillIndex) => (
+                        <motion.div
+                            key={skill.name}
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ 
+                                opacity: 1, 
+                                scale: 1,
+                                transition: {
+                                    delay: 0.04 * skillIndex,
+                                    type: "spring",
+                                    stiffness: 300,
+                                    damping: 20
+                                }
+                            }}
+                        >
+                            <MobileSkillCard
+                                name={skill.name}
+                                iconPath={skill.iconPath}
+                                bgColor={skill.bgColor}
+                                textColor={skill.textColor}
+                                textSize={skill.textSize}
+                            />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
+        </motion.div>
+    );
+};
+
+// Desktop version of Skills component
+const DesktopSkills: React.FC = () => {
+    const [activeFilter, setActiveFilter] = React.useState("All");
+    const filters = ["All", "Languages", "Frameworks", "DBMS", "Tools"];
+    
+    // Filter skills based on selected category
+    const filteredSkills = React.useMemo(() => {
+        if (activeFilter === "All") {
+            return skills;
+        }
+        return skills.filter(skill => skill.category === activeFilter);
+    }, [activeFilter]);
+    
+    return (
+        <motion.div 
+            className="p-6 bg-gray-800/30 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-700/50 w-full"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+        >
+            <motion.h2 
+                className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-6 flex items-center gap-2"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                <FaCode className="text-blue-400" />
+                Technical Skills
+            </motion.h2>
+            
+            {/* Filters */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8 bg-gray-900/30 p-3 rounded-xl border border-gray-700/30">
+                {filters.map((filter) => (
+                    <motion.button
+                        key={filter}
+                        onClick={() => setActiveFilter(filter)}
+                        className={`
+                            px-4 py-2 flex items-center justify-center text-sm rounded-lg transition-all duration-300
+                            ${activeFilter === filter 
+                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg' 
+                                : 'bg-gray-800/70 text-gray-300 hover:bg-gray-700 hover:text-white'}
+                        `}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {filter}
+                    </motion.button>
                 ))}
             </div>
-        </section>
+            
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="w-full"
+            >
+                <AnimatePresence mode="wait">
+                    <motion.div 
+                        key={activeFilter}
+                        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 25,
+                            duration: 0.5
+                        }}
+                    >
+                        {filteredSkills.map((skill, skillIndex) => (
+                            <motion.div
+                                key={skill.name}
+                                className="flex justify-center"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ 
+                                    opacity: 1, 
+                                    scale: 1,
+                                    transition: {
+                                        delay: 0.05 * skillIndex,
+                                        type: "spring",
+                                        stiffness: 300,
+                                        damping: 20
+                                    }
+                                }}
+                            >
+                                <DesktopSkillCard
+                                    key={skillIndex}
+                                    name={skill.name}
+                                    iconPath={skill.iconPath}
+                                    bgColor={skill.bgColor}
+                                    textColor={skill.textColor}
+                                    textSize={skill.textSize}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
+            </motion.div>
+        </motion.div>
+    );
+};
+
+// Main Skills component that conditionally renders mobile or desktop version
+const Skills: React.FC = () => {
+    const { isMobile } = useDeviceDetect();
+    
+    return (
+        <div className="max-w-4xl mx-auto w-full">
+            {isMobile ? <MobileSkills /> : <DesktopSkills />}
+        </div>
     );
 };
 
