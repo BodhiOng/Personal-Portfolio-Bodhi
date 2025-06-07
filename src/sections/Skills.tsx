@@ -136,12 +136,14 @@ const Skills = () => {
     };
 
     return (
-        <section className="max-w-3xl mx-auto py-16 px-6 select-none relative">
-            {/* Decorative background elements */}
-            <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl"></div>
+        <section className="w-full py-16 select-none relative">
+            {/* Decorative background elements that span full width */}
+            <div className="absolute top-20 left-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-20 right-0 w-96 h-96 bg-purple-500/5 rounded-full filter blur-3xl"></div>
             
-            <motion.div
+            {/* Content container with max-width for readability */}
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
+                <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -182,7 +184,7 @@ const Skills = () => {
             </motion.div>
             
             <motion.div 
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-between justify-items-stretch"
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 justify-between justify-items-stretch"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -199,6 +201,7 @@ const Skills = () => {
                     </motion.div>
                 ))}
             </motion.div>
+            </div>
         </section>
     );
 };

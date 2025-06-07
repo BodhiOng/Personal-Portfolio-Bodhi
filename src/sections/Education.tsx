@@ -46,12 +46,13 @@ const Education = () => {
     };
 
     return (
-        <section className="py-12 select-none relative overflow-hidden">
-            {/* Decorative background elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl"></div>
+        <section className="w-full py-16 select-none relative">
+            {/* Decorative background elements that span full width */}
+            <div className="absolute top-20 left-0 w-80 h-80 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-20 right-0 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl"></div>
             
-            <div className="max-w-3xl mx-auto p-6 relative z-10">
+            {/* Content container with max-width for readability */}
+            <div className="max-w-5xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}

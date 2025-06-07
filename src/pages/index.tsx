@@ -7,14 +7,12 @@ import Projects from '@/sections/Projects';
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-900">
-      <div className="container mx-auto p-4">
+    <div className="flex flex-col min-h-screen w-full bg-gray-900">
         <Profile/>
         <AboutMe/>
         <Education/>
         <Skills/>
         <Projects/>
-      </div>
     </div>
   );
 };

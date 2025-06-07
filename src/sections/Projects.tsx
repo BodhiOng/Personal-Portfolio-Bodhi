@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import image from 'next/image';
 
 interface Project {
     title: string;
@@ -19,6 +20,13 @@ const projectsData: Project[] = [
         github: "https://github.com/BodhiOng/Admin-Dashboard-ECommerce",
         image: "/ecommerce-preview.jpg"
     },
+    {
+        title: "Secondhand Marketplace App",
+        description: "This is a secondhand marketplace app developed as part of the CT124-3-2-MAE (Mobile App Engineering) group assignment for the Asia Pacific University (APU) in 2025",
+        technologies: ["Flutter", "Dart", "Firebase"],
+        github: "https://github.com/BodhiOng/Secondhand-Marketplace-App",
+        image: "/secondhand-preview.jpg"
+    }
 ];
 
 const Projects = () => {
@@ -47,12 +55,13 @@ const Projects = () => {
     };
 
     return (
-        <section className="py-16 select-none relative" id="projects">
-            {/* Decorative background elements */}
-            <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl"></div>
+        <section className="w-full py-16 select-none relative" id="projects">
+            {/* Decorative background elements that span full width */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full filter blur-3xl"></div>
             
-            <div className="max-w-3xl mx-auto p-6 relative z-10">
+            {/* Content container with max-width for readability */}
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -73,7 +82,7 @@ const Projects = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-blue-900/10 transition-all duration-500 border border-gray-700/30 group"
+                            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-full hover:shadow-blue-900/10 transition-all duration-500 border border-gray-700/30 group"
                             whileHover={{ y: -5 }}
                         >
                             <div className="flex flex-col">
