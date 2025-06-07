@@ -19,16 +19,10 @@ const AboutMe = () => {
     };
 
     return (
-        <section className="w-full py-16 select-none relative">
-            {/* Decorative background elements that span full width */}
-            <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-64 h-64 bg-purple-500/10 rounded-full filter blur-3xl"></div>
-            
+        <section className="w-full py-16 select-none relative">            
             {/* Content container with max-width for readability */}
             <div className="max-w-5xl mx-auto px-6">
                 {/* Background decorative elements */}
-                <div className="absolute top-20 right-0 w-64 h-64 bg-blue-500/10 rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-10 left-10 w-48 h-48 bg-purple-500/10 rounded-full filter blur-3xl"></div>
                 
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}

@@ -25,11 +25,7 @@ const profileData: ProfileProps[] = [
 
 const Profile: React.FC = () => { 
     return (
-        <div className="w-full select-none relative py-12">
-            {/* Decorative background elements that span full width */}
-            <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-            <div className="absolute top-10 right-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-            
+        <div className="w-full select-none relative py-12">            
             {/* Content container with max-width for readability */}
             <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-center">
                 {profileData.map((item, index) => (

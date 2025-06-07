@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import image from 'next/image';
 
 interface Project {
     title: string;
@@ -16,7 +15,7 @@ const projectsData: Project[] = [
     {
         title: "Admin Dashboard for E-Commerce",
         description: "A full-stack admin dashboard for e-commerce with authentication, user/product/order management, and modern UI/UX.",
-        technologies: ["Next.js", "React.js", "Tailwind CSS", "MongoDB", "Express.js", "Node.js"],
+        technologies: ["Next.js", "React.js", "Tailwind CSS", "Express.js", "MongoDB"],
         github: "https://github.com/BodhiOng/Admin-Dashboard-ECommerce",
         image: "/ecommerce-preview.jpg"
     },
@@ -55,11 +54,7 @@ const Projects = () => {
     };
 
     return (
-        <section className="w-full py-16 select-none relative" id="projects">
-            {/* Decorative background elements that span full width */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full filter blur-3xl"></div>
-            
+        <section className="w-full py-16 select-none relative" id="projects">            
             {/* Content container with max-width for readability */}
             <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <motion.div
@@ -73,7 +68,7 @@ const Projects = () => {
                 </motion.div>
                 
                 <motion.div 
-                    className="space-y-16"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -82,30 +77,26 @@ const Projects = () => {
                         <motion.div
                             key={index}
                             variants={itemVariants}
-                            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-full hover:shadow-blue-900/10 transition-all duration-500 border border-gray-700/30 group"
+                            className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl overflow-hidden shadow-full hover:shadow-blue-900/10 transition-all duration-500 border border-gray-700/30 group h-full"
                             whileHover={{ y: -5 }}
                         >
-                            <div className="flex flex-col">
-                                <div className="relative w-full h-64 overflow-hidden">
+                            <div className="flex flex-col h-full">
+                                <div className="relative w-full h-64 md:h-80 overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-10"></div>
-                                    <motion.div 
-                                        className="absolute inset-0"
-                                        whileHover={{ scale: 1.05 }}
-                                        transition={{ duration: 1.2 }}
-                                    >
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    </motion.div>
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        priority
+                                    />
                                     <div className="absolute bottom-4 left-4 right-4 z-20">
                                         <h3 className="text-2xl font-bold text-white mb-1 drop-shadow-md">{project.title}</h3>
                                     </div>
                                 </div>
                                 
-                                <div className="p-6 flex flex-col justify-between flex-1 bg-gradient-to-b from-gray-900 to-gray-800">
+                                <div className="p-6 flex flex-col justify-between bg-gradient-to-b from-gray-900 to-gray-800">
                                     <div>
                                         <p className="text-gray-300 mb-6 leading-relaxed">{project.description}</p>
                                         <div className="flex flex-wrap gap-2 mb-6">
