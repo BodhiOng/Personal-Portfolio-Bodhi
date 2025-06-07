@@ -1,6 +1,7 @@
 import React, { memo, useState } from 'react';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import { motion } from 'framer-motion';
 
 // Explicitly typed skillIcons object
 const skillIcons: { [key: string]: StaticImageData } = {
@@ -39,24 +40,35 @@ interface SkillCardProps {
 
 const SkillCard = memo(({ name, icon, bgColor = "bg-white", textColor = "text-white", textSize = "text-sm"}: SkillCardProps) => {
     return (
-        <div
-            className={`flex items-center justify-center p-3 rounded-lg ${textColor} ${bgColor} shadow-sm-full`}
-            style={{ backgroundColor: bgColor.startsWith('#') ? bgColor : '' }}
+        <motion.div
+            className="flex flex-col items-center justify-center p-4 rounded-xl shadow-lg relative overflow-hidden group"
+            style={{ 
+                background: bgColor.startsWith('#') ? 
+                    `linear-gradient(135deg, ${bgColor}dd, ${bgColor})` : 
+                    'linear-gradient(135deg, #2d3748, #1a202c)' 
+            }}
+            whileHover={{ y: -5, scale: 1.03 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-            <div className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center">
-                <Image
-                    src={icon}
-                    alt={`${name} icon`}
-                    className="w-6 h-6 md:w-8 md:h-8 object-contain"
-                    width={32}
-                    height={32}
-                    draggable={false}
-                />
+            {/* Glow effect on hover */}
+            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            
+            <div className="relative z-10 flex flex-col items-center">
+                <div className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white/10 rounded-full p-3 mb-3 backdrop-blur-sm">
+                    <Image
+                        src={icon}
+                        alt={`${name} icon`}
+                        className="w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                        width={40}
+                        height={40}
+                        draggable={false}
+                    />
+                </div>
+                <div className="flex flex-col items-center">
+                    <span className={`${textSize} font-bold ${textColor} text-center`}>{name}</span>
+                </div>
             </div>
-            <div className="hidden md:flex ml-3 flex-col items-center">
-                <span className={`${textSize} font-semibold ${textColor}`}>{name}</span>
-            </div>
-        </div>
+        </motion.div>
     );
 });
 
@@ -98,42 +110,95 @@ const Skills = () => {
         ? skills 
         : skills.filter(skill => skill.category === activeFilter);
 
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05,
+                delayChildren: 0.3
+            }
+        }
+    };
+    
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12
+            }
+        }
+    };
+
     return (
-        <section className="max-w-2xl mx-auto py-12 px-6 select-none">
-            <h2 className="text-3xl font-bold mb-6 text-center">
-                Technical Skills
-            </h2>
+        <section className="max-w-3xl mx-auto py-16 px-6 select-none relative">
+            {/* Decorative background elements */}
+            <div className="absolute top-20 right-10 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl"></div>
+            <div className="absolute bottom-20 left-10 w-80 h-80 bg-purple-500/5 rounded-full filter blur-3xl"></div>
+            
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-12 text-center"
+            >
+                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 inline-block mb-3">
+                    Technical Skills
+                </h2>
+                <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto"></div>
+            </motion.div>
             
             {/* Filters */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-                {filters.map((filter) => (
-                    <button
+            <motion.div 
+                className="flex flex-wrap justify-center gap-3 mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+            >
+                {filters.map((filter, index) => (
+                    <motion.button
                         key={filter}
                         onClick={() => setActiveFilter(filter)}
                         className={`
-                            px-3 py-2 h-10 flex items-center justify-center text-sm rounded-lg transition-all duration-300
+                            px-5 py-2 flex items-center justify-center text-sm rounded-full transition-all duration-300 font-medium
                             ${activeFilter === filter 
-                                ? 'bg-gray-700 text-white' 
-                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'}
+                                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-700/20' 
+                                : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/70 hover:text-white backdrop-blur-sm border border-gray-700/50'}
                         `}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 * index, duration: 0.5 }}
                     >
                         {filter}
-                    </button>
+                    </motion.button>
                 ))}
-            </div>
+            </motion.div>
             
-            <div className="grid grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gap-3 justify-between justify-items-stretch">
+            <motion.div 
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-between justify-items-stretch"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
                 {filteredSkills.map((skill) => (
-                    <SkillCard
-                        key={skill.name}
-                        name={skill.name}
-                        icon={skill.icon}
-                        bgColor={skill.bgColor}
-                        textColor={skill.textColor}
-                        textSize={skill.textSize}
-                    />
+                    <motion.div key={skill.name} variants={itemVariants}>
+                        <SkillCard
+                            name={skill.name}
+                            icon={skill.icon}
+                            bgColor={skill.bgColor}
+                            textColor={skill.textColor}
+                            textSize={skill.textSize || "text-sm"}
+                        />
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };
