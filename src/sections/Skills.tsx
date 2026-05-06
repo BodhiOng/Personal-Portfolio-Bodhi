@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react';
+import Image from 'next/image';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
 // ==============================
@@ -79,12 +80,15 @@ const SkillCard = memo(({
                 {/* Skill Icon */}
                 <div className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full p-3 mb-3 border transition-colors duration-300 group-hover:border-white/20 ${iconContainerClassName}`}>
                     {icon ? (
-                        <img
+                        <Image
                             src={icon}
                             alt={`${name} icon`}
+                            width={40}
+                            height={40}
                             className={`w-8 h-8 md:w-10 md:h-10 object-contain group-hover:scale-110 transition-transform duration-300 ${iconClassName}`}
                             loading="lazy"
                             draggable={false}
+                            unoptimized={icon.endsWith('.svg')}
                         />
                     ) : (
                         <span className="text-sm font-bold uppercase tracking-wider text-white/90">{name.slice(0, 2)}</span>

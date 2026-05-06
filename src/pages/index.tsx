@@ -1,9 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Profile from '../sections/Profile';
-import AboutMe from '@/sections/AboutMe';
-import Education from '@/sections/Education';
-import Skills from '@/sections/Skills'
-import Projects from '@/sections/Projects';
+
+const AboutMe = dynamic(() => import('@/sections/AboutMe'), { ssr: true });
+const Education = dynamic(() => import('@/sections/Education'), { ssr: true });
+const Skills = dynamic(() => import('@/sections/Skills'), { ssr: true });
+const Projects = dynamic(() => import('@/sections/Projects'), { ssr: true });
 
 const App: React.FC = () => {
   return (
