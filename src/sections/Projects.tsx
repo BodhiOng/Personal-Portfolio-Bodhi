@@ -61,7 +61,7 @@ const Projects = React.memo(() => {
     };
 
     return (
-        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8" id="projects">
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_1200px]" id="projects">
             <SectionBackdrop accent="violet" />
             <div className="mx-auto max-w-6xl relative z-10">
                 <div className="mb-10 md:hidden">
@@ -127,7 +127,7 @@ const Projects = React.memo(() => {
                     {projectsData.map((project, index) => (
                         <article
                             key={index}
-                            className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 backdrop-blur-xl"
+                            className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 backdrop-blur-md"
                         >
                             <div className="relative h-48 w-full overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/80 z-10"></div>
@@ -217,7 +217,7 @@ const Projects = React.memo(() => {
                         <div
                             key={index}
                             data-project-card
-                            className="snap-start flex-none w-[92%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem)] group h-[620px] sm:h-[660px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-950/40 backdrop-blur-xl"
+                            className="snap-start flex-none w-[92%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem)] group h-[620px] sm:h-[660px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-950/40 backdrop-blur-md"
                         >
                             <div className="flex flex-col h-full">
                                 <div className="relative h-64 w-full overflow-hidden md:h-72">

@@ -32,5 +32,12 @@ body::before {
   background-image: linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
-  opacity: 0.35;
+  opacity: 0.18;
+}
+
+@media (max-width: 768px) {
+  body::before {
+    opacity: 0.08;
+    background-size: 96px 96px;
+  }
 }

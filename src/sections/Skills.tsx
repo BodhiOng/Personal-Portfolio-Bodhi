@@ -63,7 +63,7 @@ const SkillCard = memo(({
 
     return (
         <div
-            className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 p-4 shadow-lg shadow-slate-950/20 transition-all duration-300 group hover:-translate-y-1 hover:scale-[1.02]"
+            className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 p-4 shadow-lg shadow-slate-950/20 transition-all duration-300 group hover:-translate-y-1 hover:scale-[1.02] [contain:paint]"
             style={{
                 background: bgColor.startsWith('#')
                     ? `linear-gradient(135deg, ${bgColor}dd, ${bgColor}cc)`
@@ -71,7 +71,7 @@ const SkillCard = memo(({
             }}
         >
             {/* Glow effect on hover */}
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-white opacity-0 transition-opacity duration-300 group-hover:opacity-8"></div>
 
             {/* No category indicator */}
 
@@ -187,7 +187,7 @@ const Skills = memo(() => {
         : skills.filter(skill => skill.category === activeFilter);
 
     return (
-        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8">
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_1100px]">
             <SectionBackdrop accent="cyan" />
             <div className="mx-auto max-w-6xl relative z-10">
                 <div className="mb-10 text-center">

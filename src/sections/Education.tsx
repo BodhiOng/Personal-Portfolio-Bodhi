@@ -61,7 +61,7 @@ const Education = React.memo(() => {
     };
 
     return (
-        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8">            
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_1200px]">            
             <SectionBackdrop accent="blue" />
             <div className="mx-auto max-w-6xl relative z-10">
                 <div className="mb-10 max-w-2xl">
@@ -78,7 +78,7 @@ const Education = React.memo(() => {
                     {educationData.map((item, index) => (
                         <div
                             key={index}
-                            className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-xl md:p-8"
+                            className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md md:p-8"
                         >
                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent" />
                             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">

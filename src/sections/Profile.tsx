@@ -1,5 +1,6 @@
 import React from 'react';
 import { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import bodhipic from '../../public/bodhi_pic.jpeg';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
@@ -25,20 +26,20 @@ const profileData: ProfileProps[] = [
 
 const Profile: React.FC = React.memo(() => { 
     return (
-        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8">
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_900px]">
             <SectionBackdrop accent="blue" />
-            <div className="mx-auto grid max-w-6xl items-center gap-10 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur-xl md:grid-cols-[1.1fr_1.4fr] md:p-10">
+            <div className="mx-auto grid max-w-6xl items-center gap-10 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur-md md:grid-cols-[1.1fr_1.4fr] md:p-10">
                 {profileData.map((item, index) => (
                     <React.Fragment key={index}>
                         <div className="relative flex justify-center md:justify-start">
                             <div className="absolute inset-8 rounded-full bg-gradient-to-br from-blue-500/30 to-fuchsia-500/20 blur-2xl" />
                             <div className="relative h-56 w-56 overflow-hidden rounded-full border border-white/10 p-2 shadow-[0_0_0_12px_rgba(59,130,246,0.08)] sm:h-72 sm:w-72">
-                                <img
-                                    src={item.profilePicture.src}
+                                <Image
+                                    src={item.profilePicture}
                                     alt={`${item.name}'s profile`}
                                     width={320}
                                     height={320}
-                                    loading="lazy"
+                                    priority
                                     draggable={false}
                                     className="h-full w-full rounded-full object-cover"
                                 />

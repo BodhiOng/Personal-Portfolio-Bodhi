@@ -3,7 +3,7 @@ import SectionBackdrop from '@/components/SectionBackdrop';
 
 const AboutMe = () => {
     return (
-        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8">
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_900px]">
             <SectionBackdrop accent="violet" />
             <div className="mx-auto max-w-6xl">
                 <div className="mb-10 max-w-2xl">
@@ -19,7 +19,7 @@ const AboutMe = () => {
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-2">
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-xl">
+                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-cyan-400/10 p-3 text-cyan-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -33,7 +33,7 @@ const AboutMe = () => {
                         </p>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-blue-950/70 to-slate-950/80 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-xl">
+                    <div className="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-blue-950/70 to-slate-950/80 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-blue-400/10 p-3 text-blue-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -52,7 +52,7 @@ const AboutMe = () => {
                         </div>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-indigo-950/70 to-slate-950/80 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-xl">
+                    <div className="rounded-[1.75rem] border border-white/10 bg-gradient-to-br from-indigo-950/70 to-slate-950/80 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-indigo-400/10 p-3 text-indigo-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -69,7 +69,7 @@ const AboutMe = () => {
                         </p>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-xl">
+                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-amber-400/10 p-3 text-amber-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
