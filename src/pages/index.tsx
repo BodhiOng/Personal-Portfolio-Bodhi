@@ -7,7 +7,7 @@ import Projects from '@/sections/Projects';
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen w-full bg-gray-900">
+    <div className="flex min-h-screen w-full flex-col overflow-hidden text-slate-100">
         <Profile/>
         <AboutMe/>
         <Education/>

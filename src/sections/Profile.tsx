@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticImageData } from 'next/image';
 import bodhipic from '../../public/bodhi_pic.jpeg';
+import SectionBackdrop from '@/components/SectionBackdrop';
 
 interface ProfileProps {
     name: string;
@@ -24,86 +25,81 @@ const profileData: ProfileProps[] = [
 
 const Profile: React.FC = React.memo(() => { 
     return (
-        <div className="w-full select-none relative py-12">            
-            {/* Content container with max-width for readability */}
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-center">
+        <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8">
+            <SectionBackdrop accent="blue" />
+            <div className="mx-auto grid max-w-6xl items-center gap-10 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur-xl md:grid-cols-[1.1fr_1.4fr] md:p-10">
                 {profileData.map((item, index) => (
-                    <div 
-                        key={index} 
-                        className="flex flex-col py-8 sm:flex-row items-center sm:items-start gap-6 sm:gap-10 w-full justify-center"
-                    >
-                        <div className="flex-shrink-0 w-36 h-36 sm:w-48 sm:h-48 relative hover:scale-105 transition-transform duration-300">
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 opacity-70 -z-10 transform scale-110"></div>
-                            <img
-                                src={item.profilePicture.src}
-                                alt={`${item.name}'s profile`}
-                                width={200}
-                                height={200}
-                                loading="lazy"
-                                draggable={false}
-                                className="rounded-full object-cover ring-2 ring-white/20 shadow-xl w-full h-full"
-                            />
-                        </div>
-                        <div className="text-center sm:text-left flex flex-col justify-center z-10 sm:max-w-lg">
-                            <div>
-                                <h2 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-2 tracking-wide">
-                                    {item.name}
-                                </h2>
-                                <div className="space-y-2 mb-3">
-                                    <p className="text-gray-300 text-lg font-medium">
-                                        {item.role.split(", ").map((role, i) => (
-                                            <span key={i} className="inline-block">
-                                                {i > 0 && <span className="mx-1 text-blue-400">•</span>}
-                                                {role}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="text-gray-400 text-sm italic">
-                                        Building innovative solutions across web, mobile, and financial technologies
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-center sm:justify-start text-gray-300 text-sm mb-6 bg-gray-800/70 rounded-full px-4 py-2 mx-auto sm:mx-0 border border-gray-700/50">
-                                    <svg className="w-4 h-4 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                        <path d="M10 0C6.12 0 3 3.12 3 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.88-3.12-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S8.62 4.5 10 4.5s2.5 1.12 2.5 2.5S11.38 9.5 10 9.5z" />
-                                    </svg>
-                                    {item.location}
-                                </div>
+                    <React.Fragment key={index}>
+                        <div className="relative flex justify-center md:justify-start">
+                            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-blue-500/30 to-fuchsia-500/20 blur-2xl" />
+                            <div className="relative h-56 w-56 overflow-hidden rounded-full border border-white/10 p-2 shadow-[0_0_0_12px_rgba(59,130,246,0.08)] sm:h-72 sm:w-72">
+                                <img
+                                    src={item.profilePicture.src}
+                                    alt={`${item.name}'s profile`}
+                                    width={320}
+                                    height={320}
+                                    loading="lazy"
+                                    draggable={false}
+                                    className="h-full w-full rounded-full object-cover"
+                                />
                             </div>
-                            <div className="flex gap-4 justify-center sm:justify-start">
+                        </div>
+                        <div className="relative z-10 text-center md:text-left">
+                            <p className="mb-3 inline-flex rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200">
+                                Portfolio
+                            </p>
+                            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+                                {item.name}
+                            </h2>
+                            <p className="mt-4 text-xl font-medium text-slate-200 sm:text-2xl">
+                                {item.role}
+                            </p>
+                            <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
+                                Building practical digital products across web, mobile, and financial systems with a focus on clean architecture and thoughtful interfaces.
+                            </p>
+
+                            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Full-stack</span>
+                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Mobile</span>
+                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Quant</span>
+                            </div>
+
+                            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
+                                <svg className="h-4 w-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10 0C6.12 0 3 3.12 3 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.88-3.12-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S8.62 4.5 10 4.5s2.5 1.12 2.5 2.5S11.38 9.5 10 9.5z" />
+                                </svg>
+                                {item.location}
+                            </div>
+
+                            <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
                                 <a
                                     href={item.linkedinUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 shadow-lg hover:shadow-blue-500/20 transition-all duration-300 group"
+                                    className="inline-flex items-center gap-3 rounded-full bg-[#0A66C2] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition-transform duration-300 hover:-translate-y-0.5"
                                 >
-                                    <svg
-                                        className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
+                                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                                     </svg>
+                                    LinkedIn
                                 </a>
                                 <a
                                     href={item.githubUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 shadow-lg hover:shadow-gray-700/20 transition-all duration-300 group"
+                                    className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 shadow-lg shadow-slate-950/20 transition-transform duration-300 hover:-translate-y-0.5 hover:bg-white/10"
                                 >
-                                    <svg
-                                        className="w-5 h-5 text-white group-hover:scale-110 transition-transform"
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                    >
+                                    <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
                                     </svg>
+                                    GitHub
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </React.Fragment>
                 ))}
             </div>
-        </div>
+        </section>
     );
 });
 
