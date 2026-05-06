@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import bodhipic from '../../public/bodhi_pic.jpeg';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
@@ -33,12 +33,10 @@ const Profile: React.FC = React.memo(() => {
                         <div className="relative flex justify-center md:justify-start">
                             <div className="absolute inset-8 rounded-full bg-gradient-to-br from-blue-500/30 to-fuchsia-500/20 blur-2xl" />
                             <div className="relative h-56 w-56 overflow-hidden rounded-full border border-white/10 p-2 shadow-[0_0_0_12px_rgba(59,130,246,0.08)] sm:h-72 sm:w-72">
-                                <img
-                                    src={item.profilePicture.src}
+                                <Image
+                                    src={item.profilePicture}
                                     alt={`${item.name}'s profile`}
-                                    width={320}
-                                    height={320}
-                                    loading="lazy"
+                                    priority
                                     draggable={false}
                                     className="h-full w-full rounded-full object-cover"
                                 />

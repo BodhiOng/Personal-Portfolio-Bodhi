@@ -14,8 +14,8 @@ const SectionBackdrop = ({ accent = 'blue' }: SectionBackdropProps) => {
     return (
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className={`absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.18),transparent_62%)] ${accentMap[accent]}`} />
-            <div className="absolute right-0 top-20 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
-            <div className="absolute left-0 bottom-0 h-72 w-72 rounded-full bg-fuchsia-500/8 blur-3xl" />
+            <div className="absolute right-0 top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-2xl" />
+            <div className="absolute left-0 bottom-0 h-64 w-64 rounded-full bg-fuchsia-500/8 blur-2xl" />
         </div>
     );
 };

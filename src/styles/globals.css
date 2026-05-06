@@ -33,4 +33,6 @@ body::before {
   background-size: 72px 72px;
   mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
   opacity: 0.35;
+  will-change: transform;
+  transform: translateZ(0);
 }

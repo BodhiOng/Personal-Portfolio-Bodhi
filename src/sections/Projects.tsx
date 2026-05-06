@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
 interface Project {
@@ -132,10 +133,12 @@ const Projects = React.memo(() => {
                             <div className="relative h-48 w-full overflow-hidden">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/80 z-10"></div>
                                 {project.image ? (
-                                    <img
+                                    <Image
                                         src={project.image}
                                         alt={project.title}
-                                        className="h-full w-full object-cover"
+                                        fill
+                                        sizes="100vw"
+                                        className="object-cover"
                                         loading="lazy"
                                     />
                                 ) : (
@@ -223,10 +226,12 @@ const Projects = React.memo(() => {
                                 <div className="relative h-64 w-full overflow-hidden md:h-72">
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/70 z-10"></div>
                                     {project.image ? (
-                                        <img
+                                        <Image
                                             src={project.image}
                                             alt={project.title}
-                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                                             loading="lazy"
                                         />
                                     ) : (
