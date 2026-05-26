@@ -45,6 +45,8 @@ const skillIcons: { [key: string]: string | undefined } = {
     "Firebase": "/firebase.png",
     "Solidity": "/solidity.svg",
     "Hardhat": "/hardhat.svg"
+    ,
+    "Google Colab": "/colab.png"
 };
 
 // ==============================
@@ -128,6 +130,7 @@ const skills = [
     { name: "Hardhat", bgColor: "#F0D50C", textColor: "text-slate-900", category: "Tools" },
     { name: "Linux", bgColor: "#333333", category: "Tools" },
     { name: "Firebase", bgColor: "#E64A19", category: "Tools" },
+    { name: "Google Colab", bgColor: "#C99A00", category: "Tools", textColor: "text-slate-900", iconContainerClassName: "bg-white/20 border-white/20 shadow-sm", iconClassName: "" },
 ].map(skill => ({
     ...skill,
     icon: skillIcons[skill.name],
