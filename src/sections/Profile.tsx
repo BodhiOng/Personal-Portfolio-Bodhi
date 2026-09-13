@@ -10,7 +10,6 @@ interface ProfileProps {
     profilePicture: StaticImageData;
     linkedinUrl: string;
     githubUrl: string;
-    location: string;
 }
 
 const profileData: ProfileProps[] = [
@@ -20,7 +19,6 @@ const profileData: ProfileProps[] = [
         profilePicture: bodhipic,
         linkedinUrl: "https://www.linkedin.com/in/bodhidharma-ong-483839150/",
         githubUrl: "https://github.com/BodhiOng",
-        location: "Kuala Lumpur, Malaysia",
     }
 ];
 
@@ -58,19 +56,6 @@ const Profile: React.FC = React.memo(() => {
                             <p className="mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
                                 Building practical digital products across web, mobile, and financial systems with a focus on clean architecture and thoughtful interfaces.
                             </p>
-
-                            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
-                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Full-stack</span>
-                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Mobile</span>
-                                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Quant</span>
-                            </div>
-
-                            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
-                                <svg className="h-4 w-4 text-cyan-300" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 0C6.12 0 3 3.12 3 7c0 5.25 7 13 7 13s7-7.75 7-13c0-3.88-3.12-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S8.62 4.5 10 4.5s2.5 1.12 2.5 2.5S11.38 9.5 10 9.5z" />
-                                </svg>
-                                {item.location}
-                            </div>
 
                             <div className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
                                 <a

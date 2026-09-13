@@ -42,8 +42,8 @@ const educationData: EducationItem[] = [
             "Advanced Programming Language Concepts",
             "Project Management",
             "Software Quality Engineering",
-            "Designing and Developing Applications in the Cloud",
-            "Optimization & Deep Learning"
+            "Designing & Developing Applications On Cloud",
+            "Optimisation And Deep Learning"
         ],
         gpa: "3.25"
     },
@@ -54,9 +54,9 @@ const Education = React.memo(() => {
     const groupedCourses = {
         programming: ['Programming with Python', 'Object Oriented Development with Java', 'Introduction To Object Oriented Programming', 'Advanced Programming Language Concepts', 'Programming for Data Analysis'],
         design: ['Software Architecture and Testing', 'Design Methods', 'Design Patterns', 'Software Quality Engineering'],
-        systems: ['Introduction to Databases', 'Introduction to Networking', 'Operating Systems and Computer Architecture', 'Enterprise Systems', 'Designing and Developing Applications in the Cloud'],
+        systems: ['Introduction to Databases', 'Introduction to Networking', 'Operating Systems and Computer Architecture', 'Enterprise Systems', 'Designing & Developing Applications On Cloud'],
         product: ['Requirements Engineering', 'Project Management', 'Venture Building', 'Digital Thinking and Innovation'],
-        intelligence: ['Data Structure & Algorithms', 'Mathematical Concept For Computing', 'Computing Theory', 'Introduction to Artificial Intelligence', 'Optimization & Deep Learning', 'Blockchain Development'],
+        intelligence: ['Data Structure & Algorithms', 'Mathematical Concept For Computing', 'Computing Theory', 'Introduction to Artificial Intelligence', 'Optimisation And Deep Learning', 'Blockchain Development'],
         mobile: ['Mobile App Engineering', 'Systems Analysis and Design', 'Research Methods for Computing and Technology']
     };
 

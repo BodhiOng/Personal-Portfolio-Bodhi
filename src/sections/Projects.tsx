@@ -8,7 +8,6 @@ interface Project {
     github?: string;
     demo?: string;
     image?: string;
-    category?: string;
     featured?: boolean;
 }
 
@@ -18,24 +17,33 @@ const projectsData: Project[] = [
         description: 'A blockchain-based proof-of-publish portal that records publication hashes on a local Ethereum network, stores metadata in PostgreSQL, and verifies authenticity through smart contract timestamps.',
         technologies: ['Next.js', 'PostgreSQL', 'Solidity', 'Hardhat'],
         github: 'https://github.com/BodhiOng/Proof-of-Publish-Timestamping-Portal',
-        image: '/blockchain-preview.png',
-        category: 'Blockchain Development'
+        image: '/blockchain-preview.png'
     },
     {
         title: 'Secondhand Marketplace App',
         description: 'A feature-rich secondhand marketplace app that connects buyers and sellers through product browsing, search and filtering, saved favorites, secure checkout, in-app chat, order tracking, wallet-based payments, and seller tools for listing management, pricing, promotions, and sales monitoring.',
         technologies: ['Flutter', 'Dart', 'Firebase'],
         github: 'https://github.com/BodhiOng/Secondhand-Marketplace-App',
-        image: '/secondhand-preview.jpg',
-        category: 'Mobile Development'
+        image: '/secondhand-preview.jpg'
     },
-        {
+    {
         title: 'Admin Dashboard for E-Commerce',
         description: 'A full-stack admin dashboard for e-commerce with authentication, user/product/order management, and modern UI/UX.',
         technologies: ['Next.js', 'React.js', 'Tailwind CSS', 'Express.js', 'MongoDB'],
         github: 'https://github.com/BodhiOng/Admin-Dashboard-ECommerce',
-        image: '/ecommerce-preview.jpg',
-        category: 'Web Development'
+        image: '/ecommerce-preview.jpg'
+    },
+    {
+        title: 'CommunityShare',
+        description: 'A donation and request app for people in need, connecting donors with recipients directly or through a community hub where essential items can be offered, requested, and distributed more easily.',
+        technologies: ['Flutter', 'Dart', 'Firebase'],
+        image: '/cs-preview.jpeg'
+    },
+    {
+        title: 'Gamesphere Tournament Hub',
+        description: 'An esports tournament platform concept where teams can enlist for competitions, manage schedules, and connect with individual players looking for teams or competitive opportunities.',
+        technologies: ['React.js', 'ASP.NET Core', 'AWS'],
+        image: '/gsth-preview.png'
     }
 ];
 
@@ -129,25 +137,17 @@ const Projects = React.memo(() => {
                             key={index}
                             className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 backdrop-blur-md"
                         >
-                            <div className="relative h-48 w-full overflow-hidden">
+                            <div className="relative h-48 w-full overflow-hidden bg-slate-950">
                                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/25 to-black/80 z-10"></div>
                                 {project.image ? (
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="h-full w-full object-cover"
+                                        className="h-full w-full object-contain"
                                         loading="lazy"
                                     />
                                 ) : (
                                     <div className="flex h-full w-full items-end bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.25),transparent_36%),linear-gradient(135deg,#0f172a_0%,#111827_55%,#020617_100%)] p-6" />
-                                )}
-
-                                {project.category && (
-                                    <div className="absolute top-4 right-4 z-20">
-                                        <span className="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-medium text-blue-100 backdrop-blur-sm">
-                                            {project.category}
-                                        </span>
-                                    </div>
                                 )}
 
                                 <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/95 via-black/65 to-black/0 px-5 pb-4 pt-10">
@@ -217,16 +217,16 @@ const Projects = React.memo(() => {
                         <div
                             key={index}
                             data-project-card
-                            className="snap-start flex-none w-[92%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem)] group h-[620px] sm:h-[660px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-950/40 backdrop-blur-md"
+                            className="snap-start flex-none w-[92%] sm:w-[calc(50%-0.75rem)] lg:w-[calc(50%-0.75rem)] group min-h-[620px] sm:min-h-[660px] overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 shadow-xl shadow-slate-950/30 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl hover:shadow-slate-950/40 backdrop-blur-md"
                         >
                             <div className="flex flex-col h-full">
-                                <div className="relative h-64 w-full overflow-hidden md:h-72">
+                                <div className="relative h-64 w-full overflow-hidden bg-slate-950 md:h-72">
                                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/70 z-10"></div>
                                     {project.image ? (
                                         <img
                                             src={project.image}
                                             alt={project.title}
-                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                                             loading="lazy"
                                         />
                                     ) : (
@@ -242,13 +242,6 @@ const Projects = React.memo(() => {
                                                     Built to prove publication timing with an auditable, modern web workflow.
                                                 </p>
                                             </div>
-                                        </div>
-                                    )}
-                                    {project.category && (
-                                        <div className="absolute top-4 right-4 z-20">
-                                            <span className="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-xs font-medium text-blue-100 backdrop-blur-sm">
-                                                {project.category}
-                                            </span>
                                         </div>
                                     )}
                                     {project.featured && (

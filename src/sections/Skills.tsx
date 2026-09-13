@@ -44,8 +44,9 @@ const skillIcons: { [key: string]: string | undefined } = {
     "Microsoft SQL Server": "/mssql.png",
     "Firebase": "/firebase.png",
     "Solidity": "/solidity.svg",
-    "Hardhat": "/hardhat.svg"
-    ,
+    "Hardhat": "/hardhat.svg",
+    "ASP.NET Core": "/NET.svg",
+    "AWS": "/AWS.svg",
     "Google Colab": "/colab.png"
 };
 
@@ -117,6 +118,7 @@ const skills = [
     { name: "Express.js", bgColor: "#333333", category: "Frameworks" },
     { name: "Next.js", bgColor: "#696969", category: "Frameworks" },
     { name: "React.js", bgColor: "#333333", category: "Frameworks" },
+    { name: "ASP.NET Core", bgColor: "#512BD4", category: "Frameworks", textSize: "text-xs" },
     { name: "Tailwind CSS", bgColor: "#1E3A8A", category: "Frameworks" },
     { name: "Flutter", bgColor: "#1565C0", category: "Frameworks" },
     { name: "Solidity", bgColor: "#28124D", textColor: "text-white", category: "Languages", textSize: "text-xs", iconContainerClassName: "bg-violet-500/15 border-violet-300/25 shadow-[0_0_0_1px_rgba(167,139,250,0.12)]", iconClassName: "brightness-0 invert opacity-90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]" },
@@ -130,6 +132,7 @@ const skills = [
     { name: "Hardhat", bgColor: "#F0D50C", textColor: "text-slate-900", category: "Tools" },
     { name: "Linux", bgColor: "#333333", category: "Tools" },
     { name: "Firebase", bgColor: "#E64A19", category: "Tools" },
+    { name: "AWS", bgColor: "#232F3E", category: "Tools", iconContainerClassName: "bg-slate-200/75 border-slate-100/40 shadow-sm", iconClassName: "scale-110" },
     { name: "Google Colab", bgColor: "#C99A00", category: "Tools", textColor: "text-slate-900", iconContainerClassName: "bg-white/20 border-white/20 shadow-sm", iconClassName: "" },
 ].map(skill => ({
     ...skill,

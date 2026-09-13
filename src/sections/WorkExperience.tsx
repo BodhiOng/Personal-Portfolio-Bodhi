@@ -59,7 +59,7 @@ const WorkExperience = React.memo(() => {
                             </ul>
                         </div>
 
-                        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-950/70 to-slate-950/80 p-5">
+                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
                             <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">Impact</h4>
                             <p className="text-sm leading-7 text-slate-300">
                                 Focused on practical product work that blended backend plugin development, interface refinement, and platform automation.
