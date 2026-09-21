@@ -59,14 +59,13 @@ const SkillCard = memo(({
     bgColor = "bg-white",
     textColor = "text-white",
     textSize = "text-sm",
-    category,
-    iconContainerClassName = "bg-white/10 border-white/10",
+    iconContainerClassName = "bg-blue-300/10 border-blue-300/25",
     iconClassName = ""
 }: SkillCardProps) => {
 
     return (
         <div
-            className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-white/10 p-4 shadow-lg shadow-slate-950/20 transition-all duration-300 group hover:-translate-y-1 hover:scale-[1.02] [contain:paint]"
+            className="relative flex flex-col items-center justify-center overflow-hidden rounded-2xl border border-blue-300/25 p-4 shadow-lg shadow-slate-950/20 ring-1 ring-white/5 transition-all duration-300 group hover:-translate-y-1 hover:scale-[1.02] hover:border-blue-200/45 [contain:paint]"
             style={{
                 background: bgColor.startsWith('#')
                     ? `linear-gradient(135deg, ${bgColor}dd, ${bgColor}cc)`
@@ -80,7 +79,7 @@ const SkillCard = memo(({
 
             <div className="relative z-10 flex flex-col items-center">
                 {/* Skill Icon */}
-                <div className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full p-3 mb-3 border transition-colors duration-300 group-hover:border-white/20 ${iconContainerClassName}`}>
+                <div className={`w-12 h-12 md:w-16 md:h-16 flex items-center justify-center rounded-full p-3 mb-3 border transition-colors duration-300 group-hover:border-blue-200/45 ${iconContainerClassName}`}>
                     {icon ? (
                         <img
                             src={icon}
@@ -102,6 +101,7 @@ const SkillCard = memo(({
         </div>
     );
 });
+SkillCard.displayName = "SkillCard";
 
 // ==============================
 // Skills Data
@@ -184,7 +184,7 @@ const getCategoryIcon = (category: string) => {
 // ==============================
 // Main Component
 // ==============================
-const Skills = memo(() => {
+const Skills = memo(function Skills() {
     const [activeFilter, setActiveFilter] = useState("All");
     const filters = ["All", "Languages", "Frameworks", "DBMS", "Tools"];
 
@@ -224,7 +224,7 @@ const Skills = memo(() => {
                                     inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium transition-all duration-300
                                     ${isActive
                                         ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg shadow-blue-950/30'
-                                        : 'border border-white/10 bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white'}
+                                        : 'border border-blue-300/25 bg-blue-300/5 text-slate-300 hover:bg-blue-300/10 hover:text-white'}
                                 `}
                             >
                                 {getCategoryIcon(filter)}

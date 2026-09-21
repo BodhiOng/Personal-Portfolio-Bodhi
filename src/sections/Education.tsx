@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
 interface EducationItem {
@@ -13,7 +14,7 @@ interface EducationItem {
 const educationData: EducationItem[] = [
     {
         period: "2023 - 2026",
-        institution: "Asia Pacific University (APU)",
+        institution: "Asia Pacific University of Technology and Innovation (APU)",
         degree: "Bachelor of Science (Hons) In Software Engineering",
         courses: [
             "Programming with Python",
@@ -49,7 +50,7 @@ const educationData: EducationItem[] = [
     },
 ];
 
-const Education = React.memo(() => {
+const Education = React.memo(function Education() {
     // Group courses into categories for better organization
     const groupedCourses = {
         programming: ['Programming with Python', 'Object Oriented Development with Java', 'Introduction To Object Oriented Programming', 'Advanced Programming Language Concepts', 'Programming for Data Analysis'],
@@ -78,17 +79,20 @@ const Education = React.memo(() => {
                     {educationData.map((item, index) => (
                         <div
                             key={index}
-                            className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md md:p-8"
+                            className="relative overflow-hidden rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md md:p-8"
                         >
                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-400/40 to-transparent" />
                             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
                                 <div>
                                     <div className="mb-3 flex items-center">
-                                        <div className="mr-3 rounded-2xl bg-blue-400/10 p-3 text-blue-300">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0v7" />
-                                            </svg>
+                                        <div className="mr-3 flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-blue-300/25 bg-white p-2 shadow-lg shadow-slate-950/20">
+                                            <Image
+                                                src="/APU.png"
+                                                alt="Asia Pacific University of Technology and Innovation logo"
+                                                width={48}
+                                                height={44}
+                                                className="h-full w-full object-contain"
+                                            />
                                         </div>
                                         <h3 className="text-xl font-bold text-white md:text-2xl">
                                             {item.institution}
@@ -99,7 +103,7 @@ const Education = React.memo(() => {
                                     </p>
                                 </div>
                                 <div className="flex flex-col items-start gap-3 md:items-end">
-                                    <span className="flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
+                                    <span className="flex items-center rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm font-medium text-slate-200">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                         </svg>
@@ -126,7 +130,7 @@ const Education = React.memo(() => {
                                 </h4>
                                 
                                 <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-violet-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-violet-300"></span>
                                             Programming
@@ -141,7 +145,7 @@ const Education = React.memo(() => {
                                         </ul>
                                     </div>
                                     
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-blue-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-blue-300"></span>
                                             Software Design
@@ -156,7 +160,7 @@ const Education = React.memo(() => {
                                         </ul>
                                     </div>
                                     
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-emerald-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-emerald-300"></span>
                                             Systems & Cloud
@@ -171,7 +175,7 @@ const Education = React.memo(() => {
                                         </ul>
                                     </div>
                                     
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-amber-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-amber-300"></span>
                                             Product & Management
@@ -186,7 +190,7 @@ const Education = React.memo(() => {
                                         </ul>
                                     </div>
 
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-fuchsia-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-fuchsia-300"></span>
                                             Algorithms & AI
@@ -201,7 +205,7 @@ const Education = React.memo(() => {
                                         </ul>
                                     </div>
 
-                                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                    <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-4 ring-1 ring-white/5">
                                         <h5 className="mb-2 flex items-center font-medium text-cyan-200">
                                             <span className="mr-2 h-2 w-2 rounded-full bg-cyan-300"></span>
                                             Mobile, Research & Innovation

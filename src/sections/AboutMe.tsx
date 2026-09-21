@@ -19,7 +19,7 @@ const AboutMe = () => {
                 </div>
 
                 <div className="grid gap-6 lg:grid-cols-2">
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
+                    <div className="rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-cyan-400/10 p-3 text-cyan-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -29,11 +29,11 @@ const AboutMe = () => {
                             Who I Am
                         </h2>
                         <p className="text-base leading-8 text-slate-300">
-                            As a Software Engineering student at Asia Pacific University, I am building toward full-stack development with a particular interest in the back end, where structure and reliability matter most.
+                            As a Software Engineering student at Asia Pacific University of Technology and Innovation (APU), I am building toward full-stack development with a particular interest in the back end, where structure and reliability matter most.
                         </p>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
+                    <div className="rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-blue-400/10 p-3 text-blue-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -45,13 +45,9 @@ const AboutMe = () => {
                         <p className="text-base leading-8 text-slate-300">
                             My academic journey has given me a solid foundation across client-side and server-side development, and I enjoy connecting those layers into something that feels cohesive and dependable.
                         </p>
-                        <div className="mt-5 flex flex-wrap gap-3">
-                            <span className="rounded-full border border-violet-400/20 bg-violet-400/10 px-3 py-1 text-sm text-violet-200">Backend Architecture</span>
-                            <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-sm text-emerald-200">Database Design</span>
-                        </div>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
+                    <div className="rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-indigo-400/10 p-3 text-indigo-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -68,7 +64,7 @@ const AboutMe = () => {
                         </p>
                     </div>
 
-                    <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md">
+                    <div className="rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md">
                         <h2 className="mb-4 flex items-center text-xl font-semibold text-white">
                             <span className="mr-3 rounded-2xl bg-amber-400/10 p-3 text-amber-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

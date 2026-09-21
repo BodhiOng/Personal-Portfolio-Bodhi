@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import SectionBackdrop from '@/components/SectionBackdrop';
 
-const WorkExperience = React.memo(() => {
+const WorkExperience = React.memo(function WorkExperience() {
     return (
         <section className="relative isolate w-full select-none overflow-hidden px-6 py-20 sm:px-8 [content-visibility:auto] [contain-intrinsic-size:1px_900px]" id="work-experience">
             <SectionBackdrop accent="blue" />
@@ -19,9 +19,9 @@ const WorkExperience = React.memo(() => {
                     </p>
                 </div>
 
-                <div className="rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-6 shadow-xl shadow-slate-950/30 backdrop-blur-md md:p-8">
+                <div className="rounded-[1.75rem] border border-blue-300/30 bg-slate-950/70 p-6 shadow-xl shadow-slate-950/30 ring-1 ring-blue-200/10 backdrop-blur-md md:p-8">
                     <div className="mb-4 flex items-center gap-3">
-                        <div className="relative h-11 w-11 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                        <div className="relative h-11 w-11 overflow-hidden rounded-2xl border border-blue-300/25 bg-blue-300/5">
                             <Image
                                 src="/joget_inc.jpg"
                                 alt="Joget Inc. company logo"
@@ -41,15 +41,15 @@ const WorkExperience = React.memo(() => {
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-3">
-                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">HTML</span>
-                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">MySQL</span>
-                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">MariaDB</span>
-                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">JavaScript</span>
-                            <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200">Java</span>
+                            <span className="rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm text-slate-200">HTML</span>
+                            <span className="rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm text-slate-200">MySQL</span>
+                            <span className="rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm text-slate-200">MariaDB</span>
+                            <span className="rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm text-slate-200">JavaScript</span>
+                            <span className="rounded-full border border-blue-300/25 bg-blue-300/5 px-4 py-2 text-sm text-slate-200">Java</span>
                         </div>
 
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                        <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-5 ring-1 ring-white/5">
                             <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">Core Contributions</h4>
                             <ul className="space-y-3 text-sm leading-7 text-slate-300">
                                 <li>Built a cross-platform broadcast memo plugin and an admin dashboard for message priority and content management.</li>
@@ -59,7 +59,7 @@ const WorkExperience = React.memo(() => {
                             </ul>
                         </div>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                        <div className="rounded-2xl border border-blue-300/25 bg-slate-900/55 p-5 ring-1 ring-white/5">
                             <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-blue-200">Impact</h4>
                             <p className="text-sm leading-7 text-slate-300">
                                 Focused on practical product work that blended backend plugin development, interface refinement, and platform automation.
